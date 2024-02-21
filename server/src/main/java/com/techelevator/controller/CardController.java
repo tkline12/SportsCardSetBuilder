@@ -28,7 +28,7 @@ public class CardController {
     }
 
     @RequestMapping (method = RequestMethod.GET, path = "/{cardID}")
-    public Card getSingleCardByID(@RequestParam int cardID){
+    public Card getSingleCardByID(@PathVariable int cardID){
         return cardDao.getCardByCardId(cardID);
     }
 

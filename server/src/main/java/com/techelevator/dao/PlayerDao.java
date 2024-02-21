@@ -10,4 +10,5 @@ public interface PlayerDao {
     List<Player> getPlayersByPlayerName(String playerName);
     List<Player> getPlayersByTeamId(int teamID);
     List<Player> getPlayersByTeamName(String teamName);
+    List<Player> getPlayersByCardId(int cardID);
 }

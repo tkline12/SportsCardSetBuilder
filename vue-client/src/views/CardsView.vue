@@ -7,18 +7,18 @@
       </div>
     </div>
     <div v-else>
-      <card-list v-bind:cards="cards" title="Cards"/>
+      <card-images v-bind:cards="cards" title="Cards"/>
     </div>
   </div>
 </template>
 
 <script>
-import CardList from '../components/CardList.vue';
+import CardImages from '../components/CardImages.vue';
 import SportsCardService from '../services/SportsCardService';
 
 export default {
     components: {
-        CardList
+        CardImages
     },
   data() {
     return {

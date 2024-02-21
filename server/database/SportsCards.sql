@@ -23,6 +23,7 @@ CREATE TABLE "card" (
     "card_name" varchar(50)   NOT NULL,
     "card_number" varchar(20)   NOT NULL,
     "set_id" int   NOT NULL,
+    "image" varchar(50) NOT NULL,
     CONSTRAINT "pk_card" PRIMARY KEY (
         "card_id"
      )
@@ -376,80 +377,80 @@ INSERT INTO set (set_name, year, brand) VALUES ('Topps Chrome', 2019,'Topps');
 --inserting cards below
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Blue', '177', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Blue', '177', 'image.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Luka Doncic';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Base Rookie', '1', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Base Rookie', '1', 'Ohtani_Bowman_Chrome_Rookie.jpg', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Shohei Ohtani';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Base Rookie', '40', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Base Rookie', '40','image.jpg', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Ronald Acuna Jr.';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Gold', '249', set_id FROM set WHERE set_name = 'Prizm' AND year = 2021
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Gold', '249','image.jpg', set_id FROM set WHERE set_name = 'Prizm' AND year = 2021
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Paolo Banchero';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Base Rookie', '253', set_id FROM set WHERE set_name = 'Prizm' AND year = 2014
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Base Rookie', '253','image.jpg', set_id FROM set WHERE set_name = 'Prizm' AND year = 2014
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Joel Embiid';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Signatures', 'SIG-NCH', set_id FROM set WHERE set_name = 'National Treasures' AND year = 2022
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Signatures', 'SIG-NCH','image.jpg', set_id FROM set WHERE set_name = 'National Treasures' AND year = 2022
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nick Chubb';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Base', '181', set_id FROM set WHERE set_name = 'Prestige' AND year = 2019
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Base', '181', 'image.jpg', set_id FROM set WHERE set_name = 'Prestige' AND year = 2019
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Lamar Jackson';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Autograph', '198', set_id FROM set WHERE set_name = 'Gypsy Queen' AND year = 2021
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Autograph', '198','image.jpg', set_id FROM set WHERE set_name = 'Gypsy Queen' AND year = 2021
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nick Chubb';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT '1984 Refractor', '84TC-17', set_id FROM set WHERE set_name = 'Topps Chrome' AND year = 2019
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT '1984 Refractor', '84TC-17', 'image.jpg', set_id FROM set WHERE set_name = 'Topps Chrome' AND year = 2019
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Mike Trout';
 
 WITH c AS (
-	INSERT INTO card (card_name, card_number, set_id)
-	SELECT 'Base Rookie', '304', set_id FROM set WHERE set_name = 'Donruss' AND year = 2018
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT 'Base Rookie', '304', 'image.jpg', set_id FROM set WHERE set_name = 'Donruss' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)

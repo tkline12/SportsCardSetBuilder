@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Card;
+import com.techelevator.model.Player;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -8,24 +9,30 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 @Component
 public class JdbcCardDao implements CardDao{
     private final JdbcTemplate jdbcTemplate;
-    private static final RowMapper<Card> MAPPER = new RowMapper<Card>() {
+    private final RowMapper<Card> MAPPER = new RowMapper<Card>() {
         @Override
         public Card mapRow(ResultSet resultSet, int i) throws SQLException {
             int cardID = resultSet.getInt("card_id");
             String cardName = resultSet.getString("card_name");
             String cardNumber = resultSet.getString("card_number");
             int setID = resultSet.getInt("set_id");
-            Card card = new Card(cardID, cardName, cardNumber, setID);
+            List<Player> players = playerDao.getPlayersByCardId(cardID);
+            String image = resultSet.getString("image");
+            Card card = new Card(cardID, cardName, cardNumber, players, image, setID);
             return card;
         }
     };
 
-    public JdbcCardDao(DataSource dataSource) {
+    private final PlayerDao playerDao;
+
+    public JdbcCardDao(DataSource dataSource, PlayerDao playerDao) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
+        this.playerDao = playerDao;
     }
 
     @Override

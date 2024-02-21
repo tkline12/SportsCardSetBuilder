@@ -54,4 +54,10 @@ public class JdbcPlayerDao implements PlayerDao{
                 "JOIN team t ON t.team_id = p.team_id WHERE team_name ILIKE ?", MAPPER, "%" + teamName + "%");
     }
     //TODO: JOIN TABLES
+
+    public List<Player> getPlayersByCardId(int cardID) {
+        return jdbcTemplate.query("select * from player p " +
+                "JOIN player_card pc ON pc.player_id= p.player_id " +
+                "WHERE pc.card_id = ?", MAPPER, cardID);
+    }
 }
