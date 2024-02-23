@@ -1,7 +1,6 @@
 <template>
   <div id="card-container">
-    <div v-for="card of cards" v-bind:key="card.cardID" v-bind:card="card">
-      {{card.cardName}}
+    <div class="card-box" v-for="card of cards" v-bind:key="card.cardID" v-bind:card="card">
       <card-detail :card= "card"/>
     </div>
   </div>
@@ -22,7 +21,8 @@ export default {
 #card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 100px;
   justify-content: space-around;
 }
+
 </style>

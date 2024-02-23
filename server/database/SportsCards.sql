@@ -384,6 +384,7 @@ WITH c AS (
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Luka Doncic';
 
+
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
 	SELECT 'Base Rookie', '1', 'Ohtani_Bowman_Chrome_Rookie.jpg', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
@@ -392,65 +393,73 @@ WITH c AS (
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Shohei Ohtani';
 
+
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base Rookie', '40','image.jpg', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
+	SELECT 'Base Rookie', '40','Ronald_Acuna_Jr_Rookie_Bowman_Chrome.jpg', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Ronald Acuna Jr.';
 
+
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Gold', '249','image.jpg', set_id FROM set WHERE set_name = 'Prizm' AND year = 2021
+	SELECT 'Pink Ice Rookie', '249','Paolo_Banchero_Prizm_Pink_Ice_Rookie.jpg', set_id FROM set WHERE set_name = 'Prizm' AND year = 2021
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Paolo Banchero';
 
+
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base Rookie', '253','image.jpg', set_id FROM set WHERE set_name = 'Prizm' AND year = 2014
+	SELECT 'Base Rookie', '253','Joel_Embiid_Prizm_Base_Rookie.jpg', set_id FROM set WHERE set_name = 'Prizm' AND year = 2014
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Joel Embiid';
 
+
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Signatures', 'SIG-NCH','image.jpg', set_id FROM set WHERE set_name = 'National Treasures' AND year = 2022
+	SELECT 'Signatures', 'SIG-NCH','Nick_Chubb_2022_National_Treasures_Auto.jpg', set_id FROM set WHERE set_name = 'National Treasures' AND year = 2022
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nick Chubb';
 
+
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '181', 'image.jpg', set_id FROM set WHERE set_name = 'Prestige' AND year = 2019
+	SELECT 'Base', '181', 'Lamar_Jackson_2019_Prestige_base.jpg', set_id FROM set WHERE set_name = 'Prestige' AND year = 2019
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Lamar Jackson';
 
-WITH c AS (
-	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Autograph', '198','image.jpg', set_id FROM set WHERE set_name = 'Gypsy Queen' AND year = 2021
-	RETURNING card_id
-)
-INSERT INTO player_card (player_id, card_id)
-SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nick Chubb';
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT '1984 Refractor', '84TC-17', 'image.jpg', set_id FROM set WHERE set_name = 'Topps Chrome' AND year = 2019
+	SELECT 'Base', '198','vlad_guerrero_jr_gypsy_queen_base_2021.jpg', set_id FROM set WHERE set_name = 'Gypsy Queen' AND year = 2021
+	RETURNING card_id
+)
+INSERT INTO player_card (player_id, card_id)
+SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Vladimir Guerrero Jr';
+
+
+WITH c AS (
+	INSERT INTO card (card_name, card_number, image, set_id)
+	SELECT '1984 Refractor', '84TC-17', 'trout_2019_topps_chrome_1984refractor.jpg', set_id FROM set WHERE set_name = 'Topps Chrome' AND year = 2019
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Mike Trout';
 
+
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base Rookie', '304', 'image.jpg', set_id FROM set WHERE set_name = 'Donruss' AND year = 2018
+	SELECT 'Base Rookie', '304', 'josh_allen_donruss_rated_rookie.jpg', set_id FROM set WHERE set_name = 'Donruss' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
