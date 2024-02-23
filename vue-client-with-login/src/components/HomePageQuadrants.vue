@@ -1,16 +1,16 @@
 <template>
   <div class= "grid">
-      <div class = "most-recent-set">Most Recent Set</div>
-      <div class = "favorite-sets">Favorite Sets</div>
-      <div class = "most-complete-set">Closest to Finishing</div>
-      <div class = "some-fourth-thing">Some Fourth Thing</div>
+      <button class = "most-recent-set">Most Recent Set</button>
+      <button class = "favorite-sets">Favorite Sets</button>
+      <button class = "most-complete-set">Closest to Finishing</button>
+      <button class = "some-fourth-thing">Some Fourth Thing</button>
     </div>
 </template>
 
 <script>
 export default {
-
-}
+  
+};
 </script>
 
 <style>
@@ -27,12 +27,12 @@ export default {
   grid-gap: 30px;
   background-color: rgb(142, 181, 197);
   width: 75%;
-  
 }
 
 .most-recent-set {
+  display: flex;
   grid-area: recent;
-  text-align: center;
+  justify-content: center;
   background-color: white;
   height: 50vh;
   border-radius: 40px;
@@ -43,6 +43,8 @@ export default {
 }
 
 .favorite-sets {
+  display: flex;
+  justify-content: center;
   grid-area: favorite;
   text-align: center;
   background-color: white;
@@ -55,6 +57,8 @@ export default {
 }
 
 .most-complete-set {
+  display: flex;
+  justify-content: center;
   grid-area: complete;
   text-align: center;
   background-color: white;
@@ -67,6 +71,8 @@ export default {
 }
 
 .some-fourth-thing {
+  display: flex;
+  justify-content: center;
   grid-area: fourth;
   text-align: center;
   background-color: white;

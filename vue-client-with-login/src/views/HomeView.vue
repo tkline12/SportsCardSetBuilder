@@ -2,11 +2,11 @@
   <div class="home-page">
     <h1 class="page-title">Sports Card Set Builder</h1>
     <nav class="lists">
-      <router-link :to='{name: "PlayersView"}'>Player List</router-link>
-      <router-link :to='{name: "TeamsView"}'>Team List</router-link>
-      <router-link :to='{name: "SportsView"}'>Sport List</router-link>
-      <router-link :to='{name: "SetsView"}'>My Sets</router-link>
-      <router-link :to='{name: "CardsView"}'>Card List</router-link>
+      <router-link class = "search-by-player" :to='{name: "PlayersView"}'>Search By Player</router-link>
+      <router-link :to='{name: "TeamsView"}'>Search By Team</router-link>
+      <router-link :to='{name: "SportsView"}'>Search By Sport</router-link>
+      <router-link :to='{name: "SetsView"}'>Search By Sets</router-link>
+      <router-link :to='{name: "CardsView"}'>My Cards</router-link>
     </nav>
     <div id="quadrants">
       <home-page-quadrants/>
@@ -29,6 +29,11 @@ export default {
 .lists {
   display: flex;
   justify-content: space-between;
+  margin: 100px;
+}
+
+.search-by-player{
+  text-decoration: none;
 }
 
 .page-title {
