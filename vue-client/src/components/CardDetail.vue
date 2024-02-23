@@ -4,22 +4,24 @@
       <img v-bind:src="imageBaseUrl + card.image" v-bind:alt="card.title" />
     </div>
     <div class="card-info">
-        <!-- would like to put the set name nad player name before the card name -->
-      <div class= "card-name">{{card.cardName}}</div>           
-      <div class= "card-number"> #{{card.cardNumber}}</div>
+      <div class = "player-name">
+          <p v-for= 'player in card.players' :key="player.playerID" >{{player.playerName}}</p>
+      </div>
+      <div class="card-name">{{card.setName}} {{ card.cardName }}</div>
+      <div class="card-number">#{{ card.cardNumber }}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['card'],
-    data() {
+  props: ["card"],
+  data() {
     return {
-      imageBaseUrl: "images/"
-    }
+      imageBaseUrl: "images/",
+    };
   },
-}
+};
 </script>
 
 <style>
@@ -31,10 +33,9 @@ export default {
 }
 
 .card-detail {
-    display: flex;
-    justify-content: space-evenly;
-    width: 350px;
-  
+  display: flex;
+  justify-content: space-evenly;
+  width: 350px;
 }
 
 .card-title {
@@ -54,10 +55,10 @@ img {
 }
 
 .genre {
-  background-color: #B60220;
-  border: 1px solid #51010F;
+  background-color: #b60220;
+  border: 1px solid #51010f;
   border-radius: 1rem;
-  color: #F9F6F0;
+  color: #f9f6f0;
   padding: 0.5rem 0.75rem;
 }
 </style>

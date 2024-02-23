@@ -466,3 +466,10 @@ INSERT INTO player_card (player_id, card_id)
 SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Josh Allen';
 
 
+INSERT INTO user_card (user_id, card_id) VALUES (1, 1);
+INSERT INTO user_card (user_id, card_id) VALUES (1, 2);
+INSERT INTO user_card (user_id, card_id) VALUES (1, 3);
+INSERT INTO user_card (user_id, card_id) VALUES (1, 4);
+
+
+

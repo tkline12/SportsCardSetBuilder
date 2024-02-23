@@ -1,7 +1,9 @@
 package com.techelevator.controller;
 
+import com.techelevator.dao.CardDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.exception.DaoException;
+import com.techelevator.model.Card;
 import com.techelevator.model.User;
 import com.techelevator.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -26,16 +28,18 @@ import java.util.List;
 @RestController
 @Validated
 @CrossOrigin
-@PreAuthorize("isAuthenticated()")
+//@PreAuthorize("isAuthenticated()")
 @RequestMapping( path = "/users")
 public class UserController {
 
     private final UserDao userDao;
     private final UserService userService;
+    private final CardDao cardDao;
 
-    public UserController(UserDao userDao, UserService userService) {
+    public UserController(UserDao userDao, UserService userService, CardDao cardDao) {
         this.userDao = userDao;
         this.userService = userService;
+        this.cardDao = cardDao;
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -75,5 +79,10 @@ public class UserController {
         catch (DaoException e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
         }
+    }
+
+    @RequestMapping(path = "/{userId}/cards", method = RequestMethod.GET)
+    public List<Card> getCardsByUserID(@PathVariable int userId){
+        return cardDao.getCardsByUserId(userId);
     }
 }

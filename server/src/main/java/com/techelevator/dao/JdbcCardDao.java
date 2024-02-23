@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 @Component
 public class JdbcCardDao implements CardDao{
@@ -23,16 +22,19 @@ public class JdbcCardDao implements CardDao{
             int setID = resultSet.getInt("set_id");
             List<Player> players = playerDao.getPlayersByCardId(cardID);
             String image = resultSet.getString("image");
-            Card card = new Card(cardID, cardName, cardNumber, players, image, setID);
+            String setName = cardSetDao.getSetBySetId(setID).getSetName();
+            Card card = new Card(cardID, cardName, cardNumber, players, image, setID, setName);
             return card;
         }
     };
 
     private final PlayerDao playerDao;
+    private final CardSetDao cardSetDao;
 
-    public JdbcCardDao(DataSource dataSource, PlayerDao playerDao) {
+    public JdbcCardDao(DataSource dataSource, PlayerDao playerDao, CardSetDao cardSetDao) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
         this.playerDao = playerDao;
+        this.cardSetDao = cardSetDao;
     }
 
     @Override
@@ -98,6 +100,8 @@ public class JdbcCardDao implements CardDao{
 
     @Override
     public List<Card> getCardsByUserId(int userID) {
-        return jdbcTemplate.query("SELECT * FROM card WHERE user_id = ?", MAPPER, userID);
+        return jdbcTemplate.query("SELECT * FROM card c " +
+                "JOIN user_card uc ON uc.card_id = c.card_id " +
+                "WHERE uc.user_id = ?", MAPPER, userID);
     }
 }

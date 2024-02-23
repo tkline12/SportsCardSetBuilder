@@ -10,16 +10,19 @@ public class Card {
     private List<Player> players;
     private String image;
     private int setID;
+    private String setName;
 
 
 
-    public Card(int cardID, String cardName, String cardNumber, List<Player> players, String image, int setID){
+
+    public Card(int cardID, String cardName, String cardNumber, List<Player> players, String image, int setID, String setName){
         this.cardID = cardID;
         this.cardName = cardName;
         this.cardNumber = cardNumber;
         this.players = players;
         this.image = image;
         this.setID = setID;
+        this.setName = setName;
     }
 
     public int getCardID() {
@@ -67,5 +70,12 @@ public class Card {
 
     public void setImage(String image) {
         this.image = image;
+    }
+    public String getSetName() {
+        return setName;
+    }
+
+    public void setSetName(String setName) {
+        this.setName = setName;
     }
 }
