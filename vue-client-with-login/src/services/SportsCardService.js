@@ -1,0 +1,24 @@
+import axios from 'axios';
+
+export default {
+
+  getPlayers() {
+    return axios.get('/players');
+  },
+
+  getTeams() {
+    return axios.get('/teams')
+  },
+
+  getSports() {
+    return axios.get('/sports')
+  },
+
+  getSets() {
+    return axios.get('/sets')
+  },
+
+  getCards() {
+    return axios.get('/cards')
+  },
+}
