@@ -3,10 +3,10 @@
     <h1 class="page-title">Sports Card Set Builder</h1>
     <nav class="lists">
       <router-link class = "search-by-player" :to='{name: "PlayersView"}'>Search By Player</router-link>
-      <router-link :to='{name: "TeamsView"}'>Search By Team</router-link>
-      <router-link :to='{name: "SportsView"}'>Search By Sport</router-link>
-      <router-link :to='{name: "SetsView"}'>Search By Sets</router-link>
-      <router-link :to='{name: "CardsView"}'>My Cards</router-link>
+      <router-link class = "search-by-team" :to='{name: "TeamsView"}'>Search By Team</router-link>
+      <router-link class = "search-by-sport" :to='{name: "SportsView"}'>Search By Sport</router-link>
+      <router-link class = "search-by-set" :to='{name: "SetsView"}'>Search By Set</router-link>
+      <router-link class = "my-cards" :to='{name: "CardsView"}'>My Cards</router-link>
     </nav>
     <div id="quadrants">
       <home-page-quadrants/>
@@ -33,6 +33,22 @@ export default {
 }
 
 .search-by-player{
+  text-decoration: none;
+}
+
+.search-by-team{
+  text-decoration: none;
+}
+
+.search-by-sport{
+  text-decoration: none;
+}
+
+.search-by-set{
+  text-decoration: none;
+}
+
+.my-cards{
   text-decoration: none;
 }
 

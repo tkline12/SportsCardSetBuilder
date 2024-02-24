@@ -42,6 +42,10 @@ export default {
   margin-top: 20px;
 }
 
+.most-recent-set:hover {
+  transform: scale(1.05);
+}
+
 .favorite-sets {
   display: flex;
   justify-content: center;
@@ -54,6 +58,10 @@ export default {
   font-size: 50px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin-top: 20px;
+}
+
+.favorite-sets:hover {
+  transform: scale(1.05);
 }
 
 .most-complete-set {
@@ -70,6 +78,10 @@ export default {
   margin-bottom: 20px;
 }
 
+.most-complete-set:hover {
+  transform: scale(1.05);
+}
+
 .some-fourth-thing {
   display: flex;
   justify-content: center;
@@ -82,5 +94,9 @@ export default {
   font-size: 50px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin-bottom: 20px;
+}
+
+.some-fourth-thing:hover{
+  transform: scale(1.05);
 }
 </style>
