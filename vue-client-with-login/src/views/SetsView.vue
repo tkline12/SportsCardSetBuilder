@@ -7,6 +7,8 @@
       </div>
     </div>
     <div v-else>
+      <button class = "set-search-button">Search</button>
+      <input type="text" class="set-input">
       <set-images v-bind:sets="sets" title="Sets"/>
     </div>
   </div>
@@ -54,5 +56,9 @@ export default {
 
 .loading {
   flex: 3;
+}
+
+.set-search-button{
+  margin-bottom: 20px;
 }
 </style>

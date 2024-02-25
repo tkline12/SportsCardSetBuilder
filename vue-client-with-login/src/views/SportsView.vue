@@ -7,6 +7,8 @@
       </div>
     </div>
     <div v-else>
+      <button class = "sport-search-button">Search</button>
+      <input type="text" class="sport-input">
       <sport-list v-bind:sports="sports" title="Sports"/>
     </div>
   </div>
@@ -53,5 +55,9 @@ components: {
 
 .loading {
   flex: 3;
+}
+
+.sport-search-button{
+  margin-bottom: 20px;
 }
 </style>

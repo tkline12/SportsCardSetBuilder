@@ -17,7 +17,6 @@ public class CardController {
     @RequestMapping (method = RequestMethod.GET)
     public List<Card> getAllCards(@RequestParam (required = false) Integer playerID,
                                   @RequestParam (required = false) String playerName) throws InterruptedException {
-        Thread.sleep(3000);
         if (playerName == null && playerID == null) {
             return cardDao.getCards();
         }

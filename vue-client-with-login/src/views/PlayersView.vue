@@ -7,6 +7,8 @@
       </div>
     </div>
     <div v-else>
+      <button class = "player-search-button">Search</button>
+      <input type="text" class="player-input">
       <player-list v-bind:players="players" title="Players"/>
     </div>
   </div>
@@ -54,5 +56,9 @@ export default {
 
 .loading {
   flex: 3;
+}
+
+.player-search-button{
+  margin-bottom: 20px;
 }
 </style>

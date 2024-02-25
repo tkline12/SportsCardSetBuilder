@@ -7,6 +7,8 @@
       </div>
     </div>
     <div v-else>
+      <button class = "card-search-button">Search</button>
+      <input type="text" class="card-input">
       <card-images v-bind:cards="cards" title="Cards"/>
     </div>
   </div>
@@ -54,5 +56,9 @@ export default {
 
 .loading {
   flex: 3;
+}
+
+.card-search-button{
+  margin-bottom: 20px;
 }
 </style>

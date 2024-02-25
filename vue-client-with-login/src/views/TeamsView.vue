@@ -7,6 +7,8 @@
       </div>
     </div>
     <div v-else>
+      <button class = "team-search-button">Search</button>
+      <input type="text" class="team-input">
       <team-list v-bind:teams="teams" title="Teams"/>
     </div>
   </div>
@@ -52,5 +54,7 @@ export default {
 </script>
 
 <style>
-
+.team-search-button{
+  margin-bottom: 20px;
+}
 </style>
