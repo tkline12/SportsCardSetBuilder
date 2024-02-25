@@ -34,22 +34,57 @@ export default {
 
 .search-by-player{
   text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 3px;
+  border-radius: 5px;
+  color: black;
 }
 
 .search-by-team{
   text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 3px;
+  border-radius: 5px;
+  color: black;
 }
 
 .search-by-sport{
   text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 3px;
+  border-radius: 5px;
+  color: black;
 }
 
 .search-by-set{
   text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 3px;
+  border-radius: 5px;
+  color: black;
 }
 
 .my-cards{
   text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 3px;
+  border-radius: 5px;
+  color: black;
 }
 
 .page-title {
