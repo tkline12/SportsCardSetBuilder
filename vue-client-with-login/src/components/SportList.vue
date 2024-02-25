@@ -2,9 +2,9 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="sports">
-      <div class="sport" v-for="sport in sports" v-bind:key="sport.sportID" v-on:click="viewPlayerDetails(sport)">
+      <div class="sport" v-for="sport in sports" v-bind:key="sport.sportID">
         <div class="header">
-          <h3>{{ sport.sportName }}</h3>
+          <h3 class="sport-name">{{ sport.sportName }}</h3>
           <!-- <img v-bind:src="sport.avatar" class="avatar" /> -->
         </div>
       </div>
@@ -28,20 +28,20 @@ props: ['title', 'sports'],
 .sport {
   background: #fff;
   border-radius: 0.25rem;
-  padding: 10px;
+  padding: 5px;
   border: 1px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  margin-bottom: 10px;
   cursor: pointer;
+  display: flex;
+  width: 75px;
+  margin: 5px;
+  justify-content: center;
 }
 
-.sport:last-child {
-  margin-bottom: 0px;
-}
 
-.sport h3 {
-  margin-top: 0px;
+.sport-name {
   font-size: 0.875rem;
+  text-align: center;
 }
 
 .sport .header {

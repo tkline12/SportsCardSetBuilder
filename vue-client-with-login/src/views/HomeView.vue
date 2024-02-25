@@ -92,6 +92,7 @@ export default {
   font-size: 75px;
   text-align: center;
   background-color: rgb(21, 159, 201);
+  
 }
 
 #quadrants{

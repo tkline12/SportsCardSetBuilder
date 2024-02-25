@@ -7,9 +7,8 @@
       </div>
     </div>
     <div v-else>
-      <button class = "sport-search-button">Search</button>
-      <input type="text" class="sport-input" v-model="searchTerm"> 
-      <sport-list :sports="filteredSports" title="Sports"/>
+      <input type="text" class="sport-input" v-model="searchTerm" placeholder="Search For Sport"> 
+      <sport-list class="sport-list" :sports="filteredSports" title="Sports"/>
     </div>
   </div>
 </template>
@@ -71,5 +70,10 @@ components: {
 
 .sport-search-button{
   margin-bottom: 20px;
+}
+
+.sport{
+  display: flex;
+  flex-direction: column;
 }
 </style>

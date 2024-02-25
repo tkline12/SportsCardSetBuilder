@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-     <router-link v-bind:to="{ name: 'home' }">Home</router-link> | 
+    <router-link v-bind:to="{ name: 'home' }">Home</router-link> | 
     <router-link v-bind:to="{ name: 'login' }" v-if="!$store.state.token">Login</router-link>
     <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token">Welcome {{$store.state.user.username}}!</router-link>
     <!-- If there is a message in application state, display it  -->
