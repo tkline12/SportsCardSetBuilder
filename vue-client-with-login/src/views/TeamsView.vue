@@ -8,8 +8,8 @@
     </div>
     <div v-else>
       <button class = "team-search-button">Search</button>
-      <input type="text" class="team-input">
-      <team-list v-bind:teams="teams" title="Teams"/>
+      <input type="text" class="team-input" v-model="searchTerm">
+      <team-list :teams="filteredTeams" title="Teams"/>
     </div>
   </div>
 </template>
@@ -26,8 +26,20 @@ export default {
     return {
       teams: [],
       isLoading: true,
+      searchTerm: "",
     };
   }, 
+
+  computed: {
+    filteredTeams(){
+      return this.teams.filter(team => {
+        let teamName = team.teamName.toLowerCase();
+        let lowerCaseSearch = this.searchTerm.toLowerCase();
+        return teamName.includes(lowerCaseSearch);
+      })
+    }
+  },
+
   methods: {
     retrieveTeams() {
       SportsCardService.getTeams().then(response => {

@@ -8,8 +8,8 @@
     </div>
     <div v-else>
       <button class = "set-search-button">Search</button>
-      <input type="text" class="set-input">
-      <set-images v-bind:sets="sets" title="Sets"/>
+      <input type="text" class="set-input" v-model="searchTerm">
+      <set-images :sets='filteredSets' title="Sets"/>
     </div>
   </div>
 </template>
@@ -26,7 +26,17 @@ export default {
     return {
       sets: [],
       isLoading: true,
+      searchTerm: "",
     };
+  },
+  computed: {
+    filteredSets(){
+      return this.sets.filter(set => {
+        let setName = set.setName.toLowerCase();
+        let lowerCaseSearch = this.searchTerm.toLowerCase();
+        return setName.includes(lowerCaseSearch);
+      })
+    }
   },
   methods: {
     retrieveSets() {
