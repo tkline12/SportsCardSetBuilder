@@ -2,7 +2,7 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="cards">
-      <div class="card" v-for="card in cards" v-bind:key="card.cardID" v-on:click="viewcardDetails(card)">
+      <div class="card" v-for="card in cards" v-bind:key="card.cardID">
         <card-images :card= "card"/>
           <!-- <img v-bind:src="card.avatar" class="avatar" /> -->
       </div>
@@ -20,7 +20,6 @@ components: {
 props: ['title', 'cards'],
   methods: {
     viewcardDetails(card) {
- //     this.$router.push({ name: 'cardView', params: {cardId: card.cardID} });
     },
   }
 };

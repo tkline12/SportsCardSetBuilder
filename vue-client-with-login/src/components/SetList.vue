@@ -2,10 +2,10 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="sets">
-      <div class="set" v-for="set in sets" v-bind:key="set.setID" v-on:click="viewSetDetails(set)">
+      <div class="set" v-for="set in sets" v-bind:key="set.setID">
         <div class="header">
-          <h3>{{ set.setName }} | {{set.year}}</h3>
-          <!-- <img v-bind:src="set.avatar" class="avatar" /> -->
+          <!-- <h3>{{ set.setName }} | {{set.year}}</h3> -->
+          <set-images :set = "set"/>
         </div>
       </div>
     </div>
@@ -13,7 +13,12 @@
 </template>
 
 <script>
+import SetImages from './SetImages.vue';
+
 export default {
+  components: {
+    SetImages
+  },
   props: ['title', 'sets'],
   methods: {
     viewsetDetails(set) {

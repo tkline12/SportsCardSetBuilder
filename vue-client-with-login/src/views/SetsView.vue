@@ -7,18 +7,18 @@
       </div>
     </div>
     <div v-else>
-      <set-list v-bind:sets="sets" title="Sets"/>
+      <set-images v-bind:sets="sets" title="Sets"/>
     </div>
   </div>
 </template>
 
 <script>
-import SetList from '../components/SetList.vue';
+import SetImages from '../components/SetImages.vue';
 import SportsCardService from '../services/SportsCardService';
 
 export default {
  components: {
-    SetList
+    SetImages
   },
   data() {
     return {
