@@ -18,7 +18,7 @@ export default {
   props: ["card"],
   data() {
     return {
-      imageBaseUrl: "images/",
+      imageBaseUrl: "images/card-images/",
     };
   },
 };

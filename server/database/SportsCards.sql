@@ -78,6 +78,7 @@ CREATE TABLE "set" (
     "set_id" serial   NOT NULL,
     "set_name" varchar(50)   NOT NULL,
     "year" int   NOT NULL,
+    "set_image" varchar(50) NOT NULL,
     "brand" varchar(50)   NOT NULL,
     CONSTRAINT "pk_set" PRIMARY KEY (
         "set_id"
@@ -363,16 +364,16 @@ INSERT INTO team (team_name, sport_id) SELECT 'San Francisco Giants', sport_id f
 INSERT INTO team (team_name, sport_id) SELECT 'Colorado Rockies', sport_id from sport WHERE sport_name = 'Baseball';
 INSERT INTO team (team_name, sport_id) SELECT 'Philadelphia 76ers', sport_id from sport WHERE sport_name = 'Basketball';
 
-INSERT INTO set (set_name, year, brand) VALUES ('Donruss', 2018, 'Panini');
-INSERT INTO set (set_name, year, brand) VALUES ('Prizm', 2021, 'Panini');
-INSERT INTO set (set_name, year, brand) VALUES ('Bowman Chrome', 2018,'Topps');
-INSERT INTO set (set_name, year, brand) VALUES ('Optic', 2018,'Panini');
-INSERT INTO set (set_name, year, brand) VALUES ('Topps', 2020,'Topps');
-INSERT INTO set (set_name, year, brand) VALUES ('Gypsy Queen', 2021,'Topps');
-INSERT INTO set (set_name, year, brand) VALUES ('National Treasures', 2022,'Panini');
-INSERT INTO set (set_name, year, brand) VALUES ('Prestige', 2019,'Panini');
-INSERT INTO set (set_name, year, brand) VALUES ('Prizm', 2014,'Panini');
-INSERT INTO set (set_name, year, brand) VALUES ('Topps Chrome', 2019,'Topps');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Donruss', 2018, 'Panini', '2018_Donruss_Football.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Prizm', 2021, 'Panini', '2021_Prizm_Basketball.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Bowman Chrome', 2018,'Topps', '2018_Bowman_Chrome_Baseball.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Optic', 2018,'Panini', '2018_Optic Basketball.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Topps', 2020,'Topps', '2020_Topps_Baseball.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Gypsy Queen', 2021,'Topps', '2021_Gypsy_Queen_Baseball.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('National Treasures', 2022,'Panini', '2022_National_Treasures_Football.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Prestige', 2019,'Panini', '2019_Prestige_Football.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Prizm', 2014,'Panini', '2014_Prizm_Basketball.jpg');
+INSERT INTO set (set_name, year, brand, set_image) VALUES ('Topps Chrome', 2019,'Topps', '2019_Topps_Chrome_Baseball.jpg');
 
 --inserting cards below
 

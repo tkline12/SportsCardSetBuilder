@@ -7,12 +7,14 @@ public class CardSet {
     private String setName;
     private String year;
     private String brand;
+    private String setImage;
 
-    public CardSet(int setID, String setName, String year, String brand) {
+    public CardSet(int setID, String setName, String year, String brand, String setImage) {
         this.setID = setID;
         this.setName = setName;
         this.year = year;
         this.brand = brand;
+        this.setImage = setImage;
     }
 
     public int getSetID() {
@@ -47,6 +49,11 @@ public class CardSet {
         this.brand = brand;
     }
 
+    public String getSetImage() {
+        return setImage;
+    }
 
-
+    public void setSetImage(String setImage) {
+        this.setImage = setImage;
+    }
 }

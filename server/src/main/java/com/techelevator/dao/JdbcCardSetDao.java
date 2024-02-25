@@ -20,7 +20,8 @@ public class JdbcCardSetDao implements CardSetDao{
             String setName = resultSet.getString("set_name");
             String setYear = resultSet.getString("Year");
             String setBrand = resultSet.getString("Brand");
-            CardSet cardSet = new CardSet(setID, setName, setYear, setBrand);
+            String setImage = resultSet.getString("set_image");
+            CardSet cardSet = new CardSet(setID, setName, setYear, setBrand, setImage);
             return cardSet;
         }
     };
