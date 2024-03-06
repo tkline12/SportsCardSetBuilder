@@ -50,7 +50,9 @@ public class JdbcCardDao implements CardDao{
 
     @Override
     public List<Card> getCardsByPlayerId(int playerID) {
-        return jdbcTemplate.query("SELECT * FROM card WHERE player_id = ?", MAPPER, playerID);
+        return jdbcTemplate.query("SELECT * FROM card c " +
+                "JOIN player_card pc ON pc.card_id = c.card_id " +
+                "WHERE pc.player_id = ?", MAPPER, playerID);
     }
     //TODO: JOIN TABLES
     @Override

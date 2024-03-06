@@ -2,10 +2,9 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="players">
-      <div class="player" v-for="player in players" v-bind:key="player.playerID" v-on:click="viewPlayerDetails(player)">
+      <div class="player" v-for="player in players" :key="player.playerID" @click="viewPlayerCards(player)">
         <div class="header">
           <h3>{{ player.playerName }}</h3>
-          <!-- <img v-bind:src="player.avatar" class="avatar" /> -->
         </div>
       </div>
     </div>
@@ -16,8 +15,8 @@
 export default {
   props: ['title', 'players'],
   methods: {
-    viewPlayerDetails(player) {
- //     this.$router.push({ name: 'PlayerView', params: {playerId: player.playerID} });
+    viewPlayerCards(player) {
+    this.$router.push({ name: 'Player-Cards', params: {playerId: player.playerID} });
     },
   }
 };
@@ -30,6 +29,7 @@ export default {
   border-radius: 0.25rem;
   padding: 10px;
   border: 1px;
+  width: 10%;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   margin-bottom: 10px;
   cursor: pointer;

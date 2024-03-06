@@ -21,4 +21,8 @@ export default {
   getCards() {
     return axios.get('/cards')
   },
+
+  getCardsByPlayerId(playerId){
+    return axios.get(`/cards?playerID=${playerId}`)
+  }
 }
