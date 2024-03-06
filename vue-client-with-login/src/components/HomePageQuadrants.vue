@@ -3,7 +3,7 @@
       <button class = "most-recent-set">Most Recent Set</button>
       <button class = "favorite-sets">Favorite Sets</button>
       <button class = "most-complete-set">Closest to Finishing</button>
-      <button class = "some-fourth-thing">Some Fourth Thing</button>
+      <button class = "completed-sets">Completed Sets</button>
     </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
 }
 
 .most-recent-set:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .favorite-sets {
@@ -61,7 +61,7 @@ export default {
 }
 
 .favorite-sets:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .most-complete-set {
@@ -79,10 +79,10 @@ export default {
 }
 
 .most-complete-set:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-.some-fourth-thing {
+.completed-sets {
   display: flex;
   justify-content: center;
   grid-area: fourth;
@@ -96,7 +96,7 @@ export default {
   margin-bottom: 20px;
 }
 
-.some-fourth-thing:hover{
-  transform: scale(1.05);
+.completed-sets:hover{
+  transform: scale(1.03);
 }
 </style>
