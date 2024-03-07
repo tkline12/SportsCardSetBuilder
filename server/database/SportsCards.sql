@@ -446,7 +446,7 @@ WITH c AS (
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
-SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Vladimir Guerrero Jr';
+SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Vladimir Guerrero Jr.';
 
 
 WITH c AS (

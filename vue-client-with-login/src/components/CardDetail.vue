@@ -1,14 +1,14 @@
 <template>
   <div class="card-detail">
     <div class="card-image">
-      <img v-bind:src="imageBaseUrl + card.image" v-bind:alt="card.title" />
+      <img :src=" 'images/card-images/' + card.image" v-bind:alt="card.title" />
     </div>
     <div class="card-info">
       <div class = "player-name">
           <p v-for= 'player in card.players' :key="player.playerID" >{{player.playerName}}</p>
       </div>
-      <div class="card-name">{{card.setName}} {{ card.cardName }}</div>
-      <div class="card-number">#{{ card.cardNumber }}</div>
+      <div class="card-name">{{card.setName}} {{card.cardName}}</div>
+      <div class="card-number">#{{card.cardNumber}}</div>
     </div>
   </div>
 </template>
