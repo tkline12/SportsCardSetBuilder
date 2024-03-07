@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SportDao {
     List<Sport> getSports();
-    Sport getSportById(int sportID);
+    Sport getSportById(int sportId);
     List <Sport> getSportsByName(String sportName);
 }

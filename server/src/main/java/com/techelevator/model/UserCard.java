@@ -1,27 +1,27 @@
 package com.techelevator.model;
 
 public class UserCard {
-    private int userID;
-    private int cardID;
+    private int userId;
+    private int cardId;
 
-    public UserCard(int userID, int cardID) {
-        this.userID = userID;
-        this.cardID = cardID;
+    public UserCard(int userId, int cardId) {
+        this.userId = userId;
+        this.cardId = cardId;
     }
 
-    public int getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getCardID() {
-        return cardID;
+    public int getCardId() {
+        return cardId;
     }
 
-    public void setCardID(int cardID) {
-        this.cardID = cardID;
+    public void setCardId(int cardId) {
+        this.cardId = cardId;
     }
 }

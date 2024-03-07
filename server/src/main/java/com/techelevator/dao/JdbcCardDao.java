@@ -16,14 +16,14 @@ public class JdbcCardDao implements CardDao{
     private final RowMapper<Card> MAPPER = new RowMapper<Card>() {
         @Override
         public Card mapRow(ResultSet resultSet, int i) throws SQLException {
-            int cardID = resultSet.getInt("card_id");
+            int cardId = resultSet.getInt("card_id");
             String cardName = resultSet.getString("card_name");
             String cardNumber = resultSet.getString("card_number");
-            int setID = resultSet.getInt("set_id");
-            List<Player> players = playerDao.getPlayersByCardId(cardID);
+            int setId = resultSet.getInt("set_id");
+            List<Player> players = playerDao.getPlayersByCardId(cardId);
             String image = resultSet.getString("image");
-            String setName = cardSetDao.getSetBySetId(setID).getSetName();
-            Card card = new Card(cardID, cardName, cardNumber, players, image, setID, setName);
+            String setName = cardSetDao.getSetBySetId(setId).getSetName();
+            Card card = new Card(cardId, cardName, cardNumber, players, image, setId, setName);
             return card;
         }
     };
@@ -43,16 +43,16 @@ public class JdbcCardDao implements CardDao{
     }
 
     @Override
-    public Card getCardByCardId(int cardID) {
-        List<Card> cards = jdbcTemplate.query("SELECT * FROM card WHERE card_id = ?", MAPPER, cardID);
+    public Card getCardByCardId(int cardId) {
+        List<Card> cards = jdbcTemplate.query("SELECT * FROM card WHERE card_id = ?", MAPPER, cardId);
         return cards.isEmpty() ? null : cards.get(0);
     }
 
     @Override
-    public List<Card> getCardsByPlayerId(int playerID) {
+    public List<Card> getCardsByPlayerId(int playerId) {
         return jdbcTemplate.query("SELECT * FROM card c " +
                 "JOIN player_card pc ON pc.card_id = c.card_id " +
-                "WHERE pc.player_id = ?", MAPPER, playerID);
+                "WHERE pc.player_id = ?", MAPPER, playerId);
     }
     //TODO: JOIN TABLES
     @Override
@@ -64,8 +64,8 @@ public class JdbcCardDao implements CardDao{
     }
 
     @Override
-    public List<Card> getCardsByTeamId(int teamID) {
-        return jdbcTemplate.query("SELECT * FROM card WHERE team_id = ?", MAPPER, teamID);
+    public List<Card> getCardsByTeamId(int teamId) {
+        return jdbcTemplate.query("SELECT * FROM card WHERE team_id = ?", MAPPER, teamId);
     }
     //TODO: JOIN TABLES
     @Override
@@ -77,8 +77,8 @@ public class JdbcCardDao implements CardDao{
     }
 
     @Override
-    public List<Card> getCardsBySetId(int setID) {
-        return jdbcTemplate.query("SELECT * FROM card WHERE set_id = ?", MAPPER, setID);
+    public List<Card> getCardsBySetId(int setId) {
+        return jdbcTemplate.query("SELECT * FROM card WHERE set_id = ?", MAPPER, setId);
     }
     //TODO: JOIN TABLES
     @Override
@@ -89,8 +89,8 @@ public class JdbcCardDao implements CardDao{
     }
 
     @Override
-    public List<Card> getCardsBySportId(int sportID) {
-        return jdbcTemplate.query("SELECT * FROM card WHERE sport_id = ?", MAPPER, sportID);
+    public List<Card> getCardsBySportId(int sportId) {
+        return jdbcTemplate.query("SELECT * FROM card WHERE sport_id = ?", MAPPER, sportId);
     }
     //TODO: JOIN TABLES
     @Override
@@ -101,9 +101,9 @@ public class JdbcCardDao implements CardDao{
     }
 
     @Override
-    public List<Card> getCardsByUserId(int userID) {
+    public List<Card> getCardsByUserId(int userId) {
         return jdbcTemplate.query("SELECT * FROM card c " +
                 "JOIN user_card uc ON uc.card_id = c.card_id " +
-                "WHERE uc.user_id = ?", MAPPER, userID);
+                "WHERE uc.user_id = ?", MAPPER, userId);
     }
 }

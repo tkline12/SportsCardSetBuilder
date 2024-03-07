@@ -17,9 +17,9 @@ public class JdbcSportDao implements SportDao{
     private static final RowMapper<Sport> MAPPER = new RowMapper<Sport>() {
         @Override
         public Sport mapRow(ResultSet resultSet, int i) throws SQLException {
-            int sportID = resultSet.getInt("sport_id");
+            int sportId = resultSet.getInt("sport_id");
             String sportName = resultSet.getString("sport_name");
-            Sport sport = new Sport(sportID, sportName);
+            Sport sport = new Sport(sportId, sportName);
             return sport;
         }
     };
@@ -33,8 +33,8 @@ public class JdbcSportDao implements SportDao{
     }
 
     @Override
-    public Sport getSportById(int sportID) {
-        List<Sport> sports = jdbcTemplate.query("SELECT * FROM sport WHERE sport_id = ?", MAPPER, sportID);
+    public Sport getSportById(int sportId) {
+        List<Sport> sports = jdbcTemplate.query("SELECT * FROM sport WHERE sport_id = ?", MAPPER, sportId);
         return sports.isEmpty() ? null : sports.get(0);
     }
 

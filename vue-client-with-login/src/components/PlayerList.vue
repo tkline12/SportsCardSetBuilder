@@ -2,7 +2,7 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="players">
-      <div class="player" v-for="player in players" :key="player.playerID" @click="viewPlayerCards(player)">
+      <div class="player" v-for="player in players" :key="player.playerId" @click="viewPlayerCards(player)">
         <div class="header">
           <h3>{{ player.playerName }}</h3>
         </div>
@@ -16,7 +16,7 @@ export default {
   props: ['title', 'players'],
   methods: {
     viewPlayerCards(player) {
-    this.$router.push({ name: 'Player-Cards', params: {playerId: player.playerID} });
+    this.$router.push({ name: 'Player-Cards', params: {playerId: player.playerId} });
     },
   }
 };

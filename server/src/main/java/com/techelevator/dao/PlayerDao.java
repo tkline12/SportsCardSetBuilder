@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface PlayerDao {
     List<Player> getPlayers();
-    Player getPlayerById(int playerID);
+    Player getPlayerById(int playerId);
     List<Player> getPlayersByPlayerName(String playerName);
-    List<Player> getPlayersByTeamId(int teamID);
+    List<Player> getPlayersByTeamId(int teamId);
     List<Player> getPlayersByTeamName(String teamName);
-    List<Player> getPlayersByCardId(int cardID);
+    List<Player> getPlayersByCardId(int cardId);
 }

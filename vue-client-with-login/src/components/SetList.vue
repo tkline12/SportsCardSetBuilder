@@ -2,9 +2,9 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="sets">
-      <div class="set" v-for="set in sets" v-bind:key="set.setID">
+      <div class="set" v-for="set in sets" :key="set.setId" @click="viewSetCards(set)">
         <div class="header">
-          <!-- <h3>{{ set.setName }} | {{set.year}}</h3> -->
+          <h3>{{ set.setName }} | {{set.year}}</h3>
           <set-images :set = "set"/>
         </div>
       </div>
@@ -21,8 +21,8 @@ export default {
   },
   props: ['title', 'sets'],
   methods: {
-    viewsetDetails(set) {
- //     this.$router.push({ name: 'setView', params: {setId: set.setID} });
+    viewSetCards(set) {
+      this.$router.push({ name: 'Set-Cards', params: {setId: set.setId} });
     },
   }
 };
@@ -40,8 +40,8 @@ export default {
   cursor: pointer;
 }
 
-.set:last-child {
-  margin-bottom: 0px;
+.set:hover {
+  transform: 1%;
 }
 
 .set h3 {

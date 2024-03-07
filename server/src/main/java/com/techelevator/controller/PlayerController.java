@@ -18,13 +18,13 @@ public class PlayerController {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Player> getAllPlayers(@RequestParam(required = false) String playerName,
-                                      @RequestParam(required = false) Integer teamID,
+                                      @RequestParam(required = false) Integer teamId,
                                       @RequestParam(required = false) String teamName) {
-        if (playerName == null && teamID == null && teamName == null) {
+        if (playerName == null && teamId == null && teamName == null) {
             return playerDao.getPlayers();
         }
-        if(teamID != null){
-            return playerDao.getPlayersByTeamId(teamID);
+        if(teamId != null){
+            return playerDao.getPlayersByTeamId(teamId);
         }
         if(teamName != null){
             return playerDao.getPlayersByTeamName(teamName);
@@ -32,8 +32,8 @@ public class PlayerController {
         return playerDao.getPlayersByPlayerName(playerName);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{playerID}")
-    public Player getPlayerByPlayerID(@PathVariable int playerID){
-        return playerDao.getPlayerById(playerID);
+    @RequestMapping(method = RequestMethod.GET, path = "/{playerId}")
+    public Player getPlayerByPlayerId(@PathVariable int playerId){
+        return playerDao.getPlayerById(playerId);
     }
 }

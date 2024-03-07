@@ -17,10 +17,10 @@ public class JdbcTeamDao implements TeamDao{
     private static final RowMapper<Team> MAPPER = new RowMapper<Team>() {
         @Override
         public Team mapRow(ResultSet resultSet, int i) throws SQLException {
-            int teamID = resultSet.getInt("team_id");
+            int teamId = resultSet.getInt("team_id");
             String teamName = resultSet.getString("team_name");
-            int sportID = resultSet.getInt("sport_id");
-            Team team = new Team (teamID, teamName, sportID);
+            int sportId = resultSet.getInt("sport_id");
+            Team team = new Team (teamId, teamName, sportId);
             return team;
         }
     };
@@ -36,8 +36,8 @@ public class JdbcTeamDao implements TeamDao{
     }
 
     @Override
-    public Team getTeamById(int teamID) {
-        List<Team> teams = jdbcTemplate.query("SELECT * FROM team WHERE team_id = ?", MAPPER, teamID);
+    public Team getTeamById(int teamId) {
+        List<Team> teams = jdbcTemplate.query("SELECT * FROM team WHERE team_id = ?", MAPPER, teamId);
         return teams.isEmpty() ? null : teams.get(0);
     }
 

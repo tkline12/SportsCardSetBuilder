@@ -16,12 +16,12 @@ public class JdbcCardSetDao implements CardSetDao{
     private static final RowMapper<CardSet> MAPPER = new RowMapper<CardSet>() {
         @Override
         public CardSet mapRow(ResultSet resultSet, int i) throws SQLException {
-            int setID = resultSet.getInt("set_id");
+            int setId = resultSet.getInt("set_id");
             String setName = resultSet.getString("set_name");
             String setYear = resultSet.getString("Year");
             String setBrand = resultSet.getString("Brand");
             String setImage = resultSet.getString("set_image");
-            CardSet cardSet = new CardSet(setID, setName, setYear, setBrand, setImage);
+            CardSet cardSet = new CardSet(setId, setName, setYear, setBrand, setImage);
             return cardSet;
         }
     };
@@ -36,8 +36,8 @@ public class JdbcCardSetDao implements CardSetDao{
     }
 
     @Override
-    public CardSet getSetBySetId(int setID) {
-        List<CardSet> sets = jdbcTemplate.query("SELECT * FROM set WHERE set_id = ?", MAPPER, setID);
+    public CardSet getSetBySetId(int setId) {
+        List<CardSet> sets = jdbcTemplate.query("SELECT * FROM set WHERE set_id = ?", MAPPER, setId);
         return sets.isEmpty() ? null : sets.get(0);
     }
 

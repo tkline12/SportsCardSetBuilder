@@ -1,20 +1,20 @@
 package com.techelevator.model;
 
 public class Sport {
-    private int sportID;
+    private int sportId;
     private String sportName;
 
-    public Sport(int sportID, String sportName) {
-        this.sportID = sportID;
+    public Sport(int sportId, String sportName) {
+        this.sportId = sportId;
         this.sportName = sportName;
     }
 
-    public int getSportID() {
-        return sportID;
+    public int getSportId() {
+        return sportId;
     }
 
-    public void setSportID(int sportID) {
-        this.sportID = sportID;
+    public void setSportId(int sportId) {
+        this.sportId = sportId;
     }
 
     public String getSportName() {

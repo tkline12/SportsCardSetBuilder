@@ -11,7 +11,8 @@ import CardsView from '../views/CardsView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
-import PlayerCardView from '../views/PlayerCardView.vue'
+import PlayerCardView from '../views/PlayerCardView.vue';
+import SetCardView from '../views/SetCardView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -83,6 +84,14 @@ const routes = [
     path: "/cards/:playerId",
     name: "Player-Cards",
     component: PlayerCardView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/cards/:setId",
+    name: "Set-Cards",
+    component: SetCardView,
     meta: {
       requiresAuth: false
     }

@@ -3,26 +3,26 @@ package com.techelevator.model;
 import java.time.LocalDate;
 
 public class CardSet {
-    private int setID;
+    private int setId;
     private String setName;
     private String year;
     private String brand;
     private String setImage;
 
-    public CardSet(int setID, String setName, String year, String brand, String setImage) {
-        this.setID = setID;
+    public CardSet(int setId, String setName, String year, String brand, String setImage) {
+        this.setId = setId;
         this.setName = setName;
         this.year = year;
         this.brand = brand;
         this.setImage = setImage;
     }
 
-    public int getSetID() {
-        return setID;
+    public int getSetId() {
+        return setId;
     }
 
-    public void setSetID(int setID) {
-        this.setID = setID;
+    public void setSetId(int setId) {
+        this.setId = setId;
     }
 
     public String getSetName() {

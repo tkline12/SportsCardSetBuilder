@@ -1,6 +1,6 @@
 <template>
   <div id="card-container">
-    <div class="card-box" v-for="card of cards" v-bind:key="card.cardID" v-bind:card="card">
+    <div class="card-box" v-for="card of cards" v-bind:key="card.cardId" v-bind:card="card">
       <card-detail :card= "card"/>
     </div>
   </div>

@@ -16,9 +16,9 @@ public class JdbcPlayerDao implements PlayerDao{
     private static final RowMapper<Player> MAPPER = new RowMapper<Player>() {
         @Override
         public Player mapRow(ResultSet resultSet, int i) throws SQLException {
-            int playerID = resultSet.getInt("player_id");
+            int playerId = resultSet.getInt("player_id");
             String playerName = resultSet.getString("player_name");
-            Player player = new Player(playerID, playerName);
+            Player player = new Player(playerId, playerName);
             return player;
         }
     };
@@ -32,8 +32,8 @@ public class JdbcPlayerDao implements PlayerDao{
     }
 
     @Override
-    public Player getPlayerById(int playerID) {
-        List<Player> players = jdbcTemplate.query("SELECT * FROM player WHERE player_id = ?", MAPPER, playerID);
+    public Player getPlayerById(int playerId) {
+        List<Player> players = jdbcTemplate.query("SELECT * FROM player WHERE player_id = ?", MAPPER, playerId);
         return players.isEmpty() ? null : players.get(0);
     }
 
@@ -43,8 +43,8 @@ public class JdbcPlayerDao implements PlayerDao{
     }
 
     @Override
-    public List<Player> getPlayersByTeamId(int teamID) {
-        return jdbcTemplate.query("SELECT * FROM player WHERE team_id = ?", MAPPER, teamID);
+    public List<Player> getPlayersByTeamId(int teamId) {
+        return jdbcTemplate.query("SELECT * FROM player WHERE team_id = ?", MAPPER, teamId);
     }
     //TODO:JOIN TABLES
 
@@ -55,9 +55,9 @@ public class JdbcPlayerDao implements PlayerDao{
     }
     //TODO: JOIN TABLES
 
-    public List<Player> getPlayersByCardId(int cardID) {
+    public List<Player> getPlayersByCardId(int cardId) {
         return jdbcTemplate.query("select * from player p " +
                 "JOIN player_card pc ON pc.player_id= p.player_id " +
-                "WHERE pc.card_id = ?", MAPPER, cardID);
+                "WHERE pc.card_id = ?", MAPPER, cardId);
     }
 }

@@ -1,27 +1,27 @@
 package com.techelevator.model;
 
 public class TeamCard {
-    private int teamID;
-    private int cardID;
+    private int teamId;
+    private int cardId;
 
-    public TeamCard(int teamID, int cardID) {
-        this.teamID = teamID;
-        this.cardID = cardID;
+    public TeamCard(int teamId, int cardId) {
+        this.teamId = teamId;
+        this.cardId = cardId;
     }
 
-    public int getTeamID() {
-        return teamID;
+    public int getTeamId() {
+        return teamId;
     }
 
-    public void setTeamID(int teamID) {
-        this.teamID = teamID;
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
     }
 
-    public int getCardID() {
-        return cardID;
+    public int getCardId() {
+        return cardId;
     }
 
-    public void setCardID(int cardID) {
-        this.cardID = cardID;
+    public void setCardId(int cardId) {
+        this.cardId = cardId;
     }
 }

@@ -23,7 +23,7 @@ public class TeamController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public Team getTeamByID(@PathVariable int id){
+    public Team getTeamById(@PathVariable int id){
         return teamDao.getTeamById(id);
     }
 

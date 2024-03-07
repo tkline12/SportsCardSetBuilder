@@ -32,7 +32,7 @@ public class CardSetController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public CardSet getSetByID(@PathVariable int id){
+    public CardSet getSetById(@PathVariable int id){
         return cardSetDao.getSetBySetId(id);
     }
 }

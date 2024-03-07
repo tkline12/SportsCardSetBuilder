@@ -4,33 +4,33 @@ import java.util.List;
 
 public class Card {
 
-    private int cardID;
+    private int cardId;
     private String cardName;
     private String cardNumber;
     private List<Player> players;
     private String image;
-    private int setID;
+    private int setId;
     private String setName;
 
 
 
 
-    public Card(int cardID, String cardName, String cardNumber, List<Player> players, String image, int setID, String setName){
-        this.cardID = cardID;
+    public Card(int cardId, String cardName, String cardNumber, List<Player> players, String image, int setId, String setName){
+        this.cardId = cardId;
         this.cardName = cardName;
         this.cardNumber = cardNumber;
         this.players = players;
         this.image = image;
-        this.setID = setID;
+        this.setId = setId;
         this.setName = setName;
     }
 
-    public int getCardID() {
-        return cardID;
+    public int getCardId() {
+        return cardId;
     }
 
-    public void setCardID(int cardID) {
-        this.cardID = cardID;
+    public void setCardId(int cardId) {
+        this.cardId = cardId;
     }
 
     public String getCardName() {
@@ -49,12 +49,12 @@ public class Card {
         this.cardNumber = cardNumber;
     }
 
-    public int getSetID() {
-        return setID;
+    public int getSetId() {
+        return setId;
     }
 
-    public void setSetID(int setID) {
-        this.setID = setID;
+    public void setSetId(int setId) {
+        this.setId = setId;
     }
     public List<Player> getPlayers() {
         return players;

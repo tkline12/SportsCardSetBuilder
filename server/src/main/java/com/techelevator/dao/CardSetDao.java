@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface CardSetDao {
     List<CardSet> getSets();
-    CardSet getSetBySetId(int setID);
+    CardSet getSetBySetId(int setId);
     List<CardSet> getSetsBySetName(String setName);
     List<CardSet> getSetsByYear(String year);
     List<CardSet> getSetsByBrand(String Brand);

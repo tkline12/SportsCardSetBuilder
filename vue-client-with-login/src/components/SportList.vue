@@ -2,7 +2,7 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="sports">
-      <div class="sport" v-for="sport in sports" v-bind:key="sport.sportID">
+      <div class="sport" v-for="sport in sports" v-bind:key="sport.sportId">
         <div class="header">
           <h3 class="sport-name">{{ sport.sportName }}</h3>
           <!-- <img v-bind:src="sport.avatar" class="avatar" /> -->
@@ -17,7 +17,7 @@ export default {
 props: ['title', 'sports'],
   methods: {
     viewSportDetails(sport) {
- //     this.$router.push({ name: 'SportView', params: {sportId: sport.sportID} });
+ //     this.$router.push({ name: 'SportView', params: {sportId: sport.sportId} });
     },
   }
 };

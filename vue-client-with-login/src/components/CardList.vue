@@ -2,7 +2,7 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="cards">
-      <div class="card" v-for="card in cards" v-bind:key="card.cardID">
+      <div class="card" v-for="card in cards" v-bind:key="card.cardId">
         <card-images :card= "card"/>
           <!-- <img v-bind:src="card.avatar" class="avatar" /> -->
       </div>

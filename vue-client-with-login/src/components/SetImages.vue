@@ -1,6 +1,6 @@
 <template>
   <div id="set-container">
-    <div class="set-box" v-for="set of sets" v-bind:key="set.setID" v-bind:set="set">
+    <div class="set-box" v-for="set of sets" :key="set.setId" :set="set" @click="viewSetCards(set)">
       <set-detail :set= "set"/>
     </div>
   </div>
@@ -25,4 +25,7 @@ export default {
   justify-content: space-around;
 }
 
+.setbox {
+  background-color: black;
+}
 </style>

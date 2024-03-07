@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface TeamDao {
     List<Team> getTeams();
-    Team getTeamById(int teamID);
+    Team getTeamById(int teamId);
     List<Team> getTeamsByName(String teamName);
 }

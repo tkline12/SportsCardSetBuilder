@@ -1,7 +1,7 @@
 <template>
   <div class="set-detail">
     <div class="set-image">
-      <img v-bind:src="imageBaseUrl + set.setImage" v-bind:alt="set.title" />
+      <img v-bind:src="imageBaseUrl + set.setImage" :alt="set.title" />
     </div>
     <div class="set-info">
       </div>

@@ -1,22 +1,22 @@
 package com.techelevator.model;
 
 public class Player {
-    private int playerID;
+    private int playerId;
     private String playerName;
 
 
-    public Player(int playerID, String playerName) {
-        this.playerID = playerID;
+    public Player(int playerId, String playerName) {
+        this.playerId = playerId;
         this.playerName = playerName;
 
     }
 
-    public int getPlayerID() {
-        return playerID;
+    public int getPlayerId() {
+        return playerId;
     }
 
-    public void setPlayerID(int playerID) {
-        this.playerID = playerID;
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
     }
 
     public String getPlayerName() {

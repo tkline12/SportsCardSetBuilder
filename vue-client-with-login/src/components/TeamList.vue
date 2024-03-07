@@ -2,7 +2,7 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="teams">
-      <div class="team" v-for="team in teams" v-bind:key="team.teamID" v-on:click="viewTeamDetails(team)">
+      <div class="team" v-for="team in teams" v-bind:key="team.teamId" v-on:click="viewTeamDetails(team)">
         <div class="header">
           <h3>{{ team.teamName }}</h3>
           <!-- <img v-bind:src="team.avatar" class="avatar" /> -->
@@ -17,7 +17,7 @@ export default {
     props: ['title', 'teams'],
     methods: {
     viewTeamDetails(team) {
- //     this.$router.push({ name: 'TeamView', params: {teamId: team.teamID} });
+ //     this.$router.push({ name: 'TeamView', params: {teamId: team.teamId} });
     },
   }
 };

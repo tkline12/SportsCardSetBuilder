@@ -9,7 +9,7 @@
     <div v-else>
       <button class = "set-search-button">Search</button>
       <input type="text" class="set-input" v-model="searchTerm">
-      <set-images :sets='filteredSets' title="Sets"/>
+      <set-images :sets='filteredSets' title="Sets" />
     </div>
   </div>
 </template>

@@ -82,7 +82,7 @@ public class UserController {
     }
 
     @RequestMapping(path = "/{userId}/cards", method = RequestMethod.GET)
-    public List<Card> getCardsByUserID(@PathVariable int userId){
+    public List<Card> getCardsByUserId(@PathVariable int userId){
         return cardDao.getCardsByUserId(userId);
     }
 }
