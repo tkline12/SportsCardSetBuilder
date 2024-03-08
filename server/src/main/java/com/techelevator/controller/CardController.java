@@ -15,17 +15,8 @@ public class CardController {
         this.cardDao = cardDao;
     }
     @RequestMapping (method = RequestMethod.GET)
-    public List<Card> getAllCards(@RequestParam (required = false) Integer playerId,
-                                  @RequestParam (required = false) String playerName) throws InterruptedException {
-        if (playerName == null && playerId == null) {
-            return cardDao.getCards();
-        }
-        if (playerName == null){
-            return cardDao.getCardsByPlayerId(playerId);
-        }
-        return cardDao.getCardsByPlayerName(playerName);
-
-        //need to put on in for getCardsBySetId
+    public List<Card> getAllCards() throws InterruptedException {
+        return cardDao.getCards();
     }
 
     @RequestMapping (method = RequestMethod.GET, path = "/{cardId}")
@@ -33,5 +24,13 @@ public class CardController {
         return cardDao.getCardByCardId(cardId);
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/sets/{setId}")
+    public List<Card> getCardsBySetId(@PathVariable int setId) {
+        return cardDao.getCardsBySetId(setId);
+    }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/players/{playerId}")
+    public List<Card> getCardsByPlayerId(@PathVariable int playerId) {
+        return cardDao.getCardsByPlayerId(playerId);
+    }
 }

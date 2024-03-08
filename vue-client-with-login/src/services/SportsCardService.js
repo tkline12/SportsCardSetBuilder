@@ -23,10 +23,10 @@ export default {
   },
 
   getCardsByPlayerId(playerId){
-    return axios.get(`/cards?playerId=${playerId}`)
+    return axios.get(`/cards/players/${playerId}`)
   },
 
   getCardsBySetId(setId){
-    return axios.get(`/cards?setId=${setId}`)
+    return axios.get(`/cards/sets/${setId}`)
   }
 }

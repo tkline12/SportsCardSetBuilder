@@ -81,7 +81,7 @@ const routes = [
     }
   }, 
   {
-    path: "/cards/:playerId",
+    path: "/cards/players/:playerId",
     name: "Player-Cards",
     component: PlayerCardView,
     meta: {
@@ -89,7 +89,7 @@ const routes = [
     }
   },
   {
-    path: "/cards/:setId",
+    path: "/cards/sets/:setId",
     name: "Set-Cards",
     component: SetCardView,
     meta: {
