@@ -2,7 +2,7 @@
   <div>
     <h2>{{ title }}</h2>
     <div class="sets">
-      <div class="set" v-for="set in sets" :key="set.setId" @click="viewSetCards(set)">
+      <div class="set" v-for="set in sets" :key="set.setId">
         <div class="header">
           <h3>{{ set.setName }} | {{set.year}}</h3>
           <set-images :set = "set"/>

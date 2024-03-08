@@ -13,7 +13,12 @@ export default {
   components: {
     SetDetail
   },
-  props: ['sets']
+  props: ['sets'], 
+  methods: {
+    viewSetCards(set) {
+      this.$router.push({ name: 'Set-Cards', params: {setId: set.setId} });
+    },
+  }
 }
 </script>
 
@@ -27,5 +32,6 @@ export default {
 
 .setbox {
   background-color: black;
+  cursor: pointer;
 }
 </style>
