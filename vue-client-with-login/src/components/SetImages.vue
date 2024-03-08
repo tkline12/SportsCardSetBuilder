@@ -32,6 +32,5 @@ export default {
 
 .setbox {
   background-color: black;
-  cursor: pointer;
 }
 </style>
