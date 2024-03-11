@@ -1,7 +1,7 @@
 <template>
   <div class="set-detail">
-    <div class="set-image">
-      <img v-bind:src="imageBaseUrl + set.setImage" :alt="set.title" />
+    <div class="set-image" @click="viewSetCards(set)">
+      <img :src="imageBaseUrl + set.setImage" :alt="set.title" />
     </div>
     <div class="set-info">
       </div>
@@ -17,10 +17,16 @@ export default {
       imageBaseUrl: "images/set-images/",
     };
   },
+  methods: {
+    viewSetCards(set) {
+      this.$router.push({ name: 'Set-Cards', params: {setId: set.setId} });
+    },
+  }
 };
 </script>
 
 <style>
+
 .genre-container {
   display: flex;
   flex-wrap: wrap;
@@ -44,6 +50,7 @@ export default {
 .set-image {
   height: 300px;
   margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 img {
