@@ -322,6 +322,28 @@ INSERT INTO player (player_name) VALUES ('Kris Dunn');
 INSERT INTO player (player_name) VALUES ('Ben Simmons');
 INSERT INTO player (player_name) VALUES ('Jamal Murray');
 INSERT INTO player (player_name) VALUES ('Bogdan Bogdanovic');
+INSERT INTO player (player_name) VALUES ('Clint Capela');
+INSERT INTO player (player_name) VALUES ('Brandon Ingram');
+INSERT INTO player (player_name) VALUES ('Malcolm Brogdon');
+INSERT INTO player (player_name) VALUES ('Jaylen Brown');
+INSERT INTO player (player_name) VALUES ('Tim Hardaway Jr.');
+INSERT INTO player (player_name) VALUES ('Gary Harris');
+INSERT INTO player (player_name) VALUES ('Buddy Hield');
+INSERT INTO player (player_name) VALUES ('James Harden');
+INSERT INTO player (player_name) VALUES ('Joe Ingles');
+INSERT INTO player (player_name) VALUES ('Rajon Rondo');
+INSERT INTO player (player_name) VALUES ('Khris Middleton');
+INSERT INTO player (player_name) VALUES ('Mario Hezonja');
+INSERT INTO player (player_name) VALUES ('Denzel Valentine');
+INSERT INTO player (player_name) VALUES ('JJ Redick');
+INSERT INTO player (player_name) VALUES ('Will Barton');
+INSERT INTO player (player_name) VALUES ('Zach Randolph');
+INSERT INTO player (player_name) VALUES ('Ryan Anderson');
+INSERT INTO player (player_name) VALUES ('Derrick Favors');
+INSERT INTO player (player_name) VALUES ('Gordon Hayward');
+INSERT INTO player (player_name) VALUES ('Kristaps Porzingis');
+INSERT INTO player (player_name) VALUES ('Dario Saric');
+INSERT INTO player (player_name) VALUES ('Paul Millsap');
 
 
 
