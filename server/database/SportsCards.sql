@@ -729,7 +729,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Dennis smi
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '11', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '11', 'cj-mccollum-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -737,7 +737,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'CJ McCollu
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '12', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '12', 'klay-thompson-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -745,7 +745,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Klay Thomp
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '13', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '13', 'demar-derozan-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -753,7 +753,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'DeMar DeRo
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '14', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '14', 'lou-williams-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -761,7 +761,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Lou Willia
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '15', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '15', 'dwyane-wade-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -769,7 +769,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Dwyane Wad
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '16', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '16', 'jeremy-lin-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -777,7 +777,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Jeremy Lin
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '17', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '17', 'jrue-holiday-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -785,7 +785,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Jrue Holid
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '18', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '18', 'nic-batum-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -793,7 +793,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nicolas Ba
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '19', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '19', 'evan-fournier-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -801,7 +801,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Evan Fourn
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '20', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '20', 'wesley-matthews-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -809,7 +809,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Wesley Mat
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '21', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '21', 'evan-turner-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -817,7 +817,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Evan Turne
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '22', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '22', 'kevin-durant-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -825,7 +825,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Kevin Dura
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '23', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '23', 'og-anunoby-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -833,7 +833,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'OG Anunoby
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '24', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '24', 'avery-bradley-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -841,7 +841,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Avery Brad
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '25', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '25', 'james-johnson-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -849,7 +849,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'James John
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '26', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '26', 'taurean-prince-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -857,7 +857,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Taurean Pr
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '27', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '27', 'nikola-mirotic-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -865,7 +865,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nikola Mir
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '28', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '28', 'malik-monk-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -873,7 +873,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Malik Monk
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '29', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '29', 'terrence-ross-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
@@ -881,7 +881,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Terrence R
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base', '30', '', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
+	SELECT 'Base', '30', 'harrison-barnes-2018-optic-base.jpg', set_id FROM set WHERE set_name = 'Optic' AND year = 2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
