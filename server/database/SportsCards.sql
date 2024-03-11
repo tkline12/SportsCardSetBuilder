@@ -365,7 +365,7 @@ INSERT INTO player (player_name) VALUES ('Danny Green');
 INSERT INTO player (player_name) VALUES ('Victor Oladipo');
 INSERT INTO player (player_name) VALUES ('Bradley Beal');
 INSERT INTO player (player_name) VALUES ('MarShon Brooks');
-INSERT INTO player (player_name) VALUES ('DAngelo Russell);
+INSERT INTO player (player_name) VALUES ('DAngelo Russell');
 INSERT INTO player (player_name) VALUES ('Paul George');
 INSERT INTO player (player_name) VALUES ('JR Smith');
 INSERT INTO player (player_name) VALUES ('Luke Kennard');
