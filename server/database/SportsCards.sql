@@ -292,6 +292,38 @@ INSERT INTO player (player_name) VALUES ('Nikola Mirotic');
 INSERT INTO player (player_name) VALUES ('Malik Monk');
 INSERT INTO player (player_name) VALUES ('Terrence Ross');
 INSERT INTO player (player_name) VALUES ('Harrison Barnes');
+INSERT INTO player (player_name) VALUES ('Zach Collins');
+INSERT INTO player (player_name) VALUES ('Draymond Green');
+INSERT INTO player (player_name) VALUES ('Serge Ibaka');
+INSERT INTO player (player_name) VALUES ('Tobias Harris');
+INSERT INTO player (player_name) VALUES ('Dion Waiters');
+INSERT INTO player (player_name) VALUES ('John Collins');
+INSERT INTO player (player_name) VALUES ('Julius Randle');
+INSERT INTO player (player_name) VALUES ('Michael Kidd-Gilchrist');
+INSERT INTO player (player_name) VALUES ('Aaron Gordon');
+INSERT INTO player (player_name) VALUES ('Dirk Nowitzki');
+INSERT INTO player (player_name) VALUES ('Jusuf Nurkic');
+INSERT INTO player (player_name) VALUES ('DeMarcus Cousins');
+INSERT INTO player (player_name) VALUES ('Jonas Valanciunas');
+INSERT INTO player (player_name) VALUES ('Marcin Gortat');
+INSERT INTO player (player_name) VALUES ('Hassan Whiteside');
+INSERT INTO player (player_name) VALUES ('Dewayne Dedmond');
+INSERT INTO player (player_name) VALUES ('Anthony Davis');
+INSERT INTO player (player_name) VALUES ('Tony Parker');
+INSERT INTO player (player_name) VALUES ('Nikola Vucevic');
+INSERT INTO player (player_name) VALUES ('DeAndre Jordan');
+INSERT INTO player (player_name) VALUES ('Chris Paul');
+INSERT INTO player (player_name) VALUES ('Ricky Rubio');
+INSERT INTO player (player_name) VALUES ('Lonzo Ball');
+INSERT INTO player (player_name) VALUES ('Eric Bledsoe');
+INSERT INTO player (player_name) VALUES ('Kyrie Irving');
+INSERT INTO player (player_name) VALUES ('Frank Ntilikina');
+INSERT INTO player (player_name) VALUES ('Kris Dunn');
+INSERT INTO player (player_name) VALUES ('Ben Simmons');
+INSERT INTO player (player_name) VALUES ('Jamal Murray');
+INSERT INTO player (player_name) VALUES ('Bogdan Bogdanovic');
+
+
 
 INSERT INTO sport (sport_name) VALUES ('Basketball');
 INSERT INTO sport (sport_name) VALUES ('Baseball');
