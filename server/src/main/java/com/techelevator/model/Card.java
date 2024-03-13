@@ -11,11 +11,12 @@ public class Card {
     private String image;
     private int setId;
     private String setName;
+    private boolean isOwned;
 
 
 
 
-    public Card(int cardId, String cardName, String cardNumber, List<Player> players, String image, int setId, String setName){
+    public Card(int cardId, String cardName, String cardNumber, List<Player> players, String image, int setId, String setName, boolean isOwned){
         this.cardId = cardId;
         this.cardName = cardName;
         this.cardNumber = cardNumber;
@@ -23,6 +24,7 @@ public class Card {
         this.image = image;
         this.setId = setId;
         this.setName = setName;
+        this.isOwned = isOwned;
     }
 
     public int getCardId() {

@@ -24,6 +24,7 @@ CREATE TABLE "card" (
     "card_number" varchar(20)   NOT NULL,
     "set_id" int   NOT NULL,
     "image" varchar(50) NOT NULL,
+    "is_owned" BOOLEAN,
     CONSTRAINT "pk_card" PRIMARY KEY (
         "card_id"
      )
