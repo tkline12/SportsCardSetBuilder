@@ -79,7 +79,12 @@ public class JdbcCardDao implements CardDao{
 
     @Override
     public List<Card> getCardsBySetId(int setId) {
-        return jdbcTemplate.query("SELECT * FROM card WHERE set_id = ?", MAPPER, setId);
+        return jdbcTemplate.query("SELECT * FROM card WHERE set_id = ? ORDER BY" +
+                " CASE " +
+                " WHEN card_number ~ '^[0-9]+$' THEN card_number::numeric" +
+                " ELSE NULL" +
+                " END ASC NULLS LAST," +
+                " card_number ASC;", MAPPER, setId);
     }
     //TODO: JOIN TABLES
     @Override
