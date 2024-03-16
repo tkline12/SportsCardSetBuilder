@@ -1,14 +1,15 @@
 <template>
   <div class="card-detail">
-    <div class="card-image">
-      <img :src=" imageBaseUrl + card.image" v-bind:alt="card.title" />
+    <div class="card-image" :class="{ 'not-owned': !isOwned }">
+      <img :src="imageBaseUrl + card.image" :alt="card.title" />
     </div>
     <div class="card-info">
-      <div class = "player-name">
-          <p v-for= 'player in card.players' :key="player.playerId" >{{player.playerName}}</p>
+      <div class="player-name">
+        <p v-for="player in card.players" :key="player.playerId">{{ player.playerName }}</p>
       </div>
-      <div class="card-name">{{card.setName}} {{card.cardName}}</div>
-      <div class="card-number">#{{card.cardNumber}}</div>
+      <div class="card-name">{{ card.setName }} {{ card.cardName }}</div>
+      <div class="card-number">#{{ card.cardNumber }}</div>
+      <input type="checkbox" v-model="isOwned"> Owned
     </div>
   </div>
 </template>
@@ -19,6 +20,7 @@ export default {
   data() {
     return {
       imageBaseUrl: "../../images/card-images/",
+      isOwned: false
     };
   },
 };
@@ -60,5 +62,24 @@ img {
   border-radius: 1rem;
   color: #f9f6f0;
   padding: 0.5rem 0.75rem;
+}
+
+.card-number{ 
+  margin-bottom: 30px;
+}
+
+.card-image {
+  height: 300px;
+  margin-bottom: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.card-image img {
+  border: 1px solid #c7c7c7;
+  height: 100%;
+}
+
+.not-owned img {
+  opacity: 0.3; 
 }
 </style>
