@@ -9,12 +9,13 @@
       </div>
       <div class="card-name">{{ card.setName }} {{ card.cardName }}</div>
       <div class="card-number">#{{ card.cardNumber }}</div>
-      <input type="checkbox" v-model="isOwned"> Owned
+      <input type="checkbox" v-model="isOwned" @change="checkCard()"> Owned
     </div>
   </div>
 </template>
 
 <script>
+import SportsCardService from '../services/SportsCardService';
 export default {
   props: ["card"],
   data() {
@@ -23,6 +24,14 @@ export default {
       isOwned: false
     };
   },
+  methods: {
+    checkCard(){
+      let changedCard = this.card
+      changedCard.isOwned = this.isOwned
+      SportsCardService.changeOwnedStatus(changedCard).then((response) => 
+      {console.log(response)})
+    }
+  }
 };
 </script>
 

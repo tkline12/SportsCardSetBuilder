@@ -28,5 +28,8 @@ export default {
 
   getCardsBySetId(setId){
     return axios.get(`/cards/sets/${setId}`)
+  },
+  changeOwnedStatus(card){
+    return axios.put('/cards', card)
   }
 }

@@ -112,4 +112,9 @@ public class JdbcCardDao implements CardDao{
                 "JOIN user_card uc ON uc.card_id = c.card_id " +
                 "WHERE uc.user_id = ?", MAPPER, userId);
     }
+
+    public Card changeCardOwnership(Card card){
+        jdbcTemplate.update("UPDATE card SET is_owned = ? WHERE card_id = ?", card.isOwned(), card.getCardId());
+        return null;
+    }
 }

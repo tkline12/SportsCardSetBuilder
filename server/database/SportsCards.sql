@@ -166,7 +166,6 @@ INSERT INTO player (player_name) VALUES ('Tyreek Hill');
 INSERT INTO player (player_name) VALUES ('Paolo Banchero');
 INSERT INTO player (player_name) VALUES ('Jalen Suggs');
 INSERT INTO player (player_name) VALUES ('Markelle Fultz');
-INSERT INTO player (player_name) VALUES ('Wendell Carter Jr.');
 INSERT INTO player (player_name) VALUES ('Franz Wagner');
 INSERT INTO player (player_name) VALUES ('Moritz Wagner');
 INSERT INTO player (player_name) VALUES ('Chuma Okeke');

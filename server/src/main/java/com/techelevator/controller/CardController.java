@@ -2,9 +2,11 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.CardDao;
 import com.techelevator.model.Card;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+//@PreAuthorize("isAuthenticated()")
 @CrossOrigin
 @RestController
 @RequestMapping (path = "/cards")
@@ -32,5 +34,10 @@ public class CardController {
     @RequestMapping(method = RequestMethod.GET, path = "/players/{playerId}")
     public List<Card> getCardsByPlayerId(@PathVariable int playerId) {
         return cardDao.getCardsByPlayerId(playerId);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public Card changeCardOwnership(@RequestBody Card card){
+       return cardDao.changeCardOwnership(card);
     }
 }

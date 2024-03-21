@@ -17,4 +17,5 @@ public interface CardDao {
     List<Card> getCardsBySportId(int sportId);
     List<Card> getCardsBySportName(String sportName);
     List<Card> getCardsByUserId(int userId);
+    Card changeCardOwnership(Card card);
 }

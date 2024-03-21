@@ -14,8 +14,6 @@ public class Card {
     private boolean isOwned;
 
 
-
-
     public Card(int cardId, String cardName, String cardNumber, List<Player> players, String image, int setId, String setName, boolean isOwned){
         this.cardId = cardId;
         this.cardName = cardName;
@@ -79,5 +77,12 @@ public class Card {
 
     public void setSetName(String setName) {
         this.setName = setName;
+    }
+    public boolean isOwned() {
+        return isOwned;
+    }
+
+    public void setOwned(boolean owned) {
+        isOwned = owned;
     }
 }
