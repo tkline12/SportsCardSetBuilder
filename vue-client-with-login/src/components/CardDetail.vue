@@ -1,6 +1,6 @@
 <template>
   <div class="card-detail">
-    <div class="card-image" :class="{ 'not-owned': !isOwned }">
+    <div class="card-image" :class="{ 'not-checked': !checked }">
       <img :src="imageBaseUrl + card.image" :alt="card.title" />
     </div>
     <div class="card-info">
@@ -9,7 +9,7 @@
       </div>
       <div class="card-name">{{ card.setName }} {{ card.cardName }}</div>
       <div class="card-number">#{{ card.cardNumber }}</div>
-      <input type="checkbox" v-model="isOwned" @change="checkCard()"> Owned
+      <input type="checkbox" v-model="checked" @change="checkCard()"> Owned
     </div>
   </div>
 </template>
@@ -17,19 +17,25 @@
 <script>
 import SportsCardService from '../services/SportsCardService';
 export default {
-  props: ["card"],
+  props: ["card", "owned"],
   data() {
     return {
       imageBaseUrl: "../../images/card-images/",
-      isOwned: false
+      checked: this.owned
     };
   },
   methods: {
     checkCard(){
-      let changedCard = this.card
-      changedCard.isOwned = this.isOwned
-      SportsCardService.changeOwnedStatus(changedCard).then((response) => 
-      {console.log(response)})
+      console.log("This card is checked" + this.checked)
+      console.log("Something" + this.$store.state.user)
+      console.log("Something" + this.$store.state.token)
+      if(this.checked){
+        SportsCardService.addCardToUser(this.$store.state.user.id, this.card.cardId).then( response => 
+        console.log(response))
+      } else {  
+        SportsCardService.deleteCardFromUser(this.$store.state.user.id, this.card.cardId).then( response => 
+        console.log(response))
+      }
     }
   }
 };
@@ -88,7 +94,7 @@ img {
   height: 100%;
 }
 
-.not-owned img {
+.not-checked img {
   opacity: 0.3; 
 }
 </style>

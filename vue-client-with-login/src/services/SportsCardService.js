@@ -31,5 +31,14 @@ export default {
   },
   changeOwnedStatus(card){
     return axios.put('/cards', card)
+  },
+  addCardToUser(userId, cardId){
+    return axios.post(`/users/${userId}/cards`, {userId : userId, cardId : cardId})
+  },
+  deleteCardFromUser(userId, cardId){
+    return axios.delete(`/users/${userId}/cards/${cardId}`)
+  },
+  getUserCardsByUserId(userId){
+    return axios.get(`/users/${userId}/cards`)
   }
 }

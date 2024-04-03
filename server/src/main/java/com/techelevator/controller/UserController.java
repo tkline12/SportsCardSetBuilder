@@ -5,6 +5,7 @@ import com.techelevator.dao.UserDao;
 import com.techelevator.exception.DaoException;
 import com.techelevator.model.Card;
 import com.techelevator.model.User;
+import com.techelevator.model.UserCard;
 import com.techelevator.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -84,5 +85,13 @@ public class UserController {
     @RequestMapping(path = "/{userId}/cards", method = RequestMethod.GET)
     public List<Card> getCardsByUserId(@PathVariable int userId){
         return cardDao.getCardsByUserId(userId);
+    }
+    @RequestMapping(path = "/{userId}/cards", method = RequestMethod.POST)
+    public UserCard addCardToUser(@PathVariable int userId, @RequestBody UserCard userCard){
+        return cardDao.addCardToUserCard(userCard.getCardId(), userId);
+    }
+    @RequestMapping(path = "/{userId}/cards/{cardId}", method = RequestMethod.DELETE)
+    public UserCard deleteCardFromUser(@PathVariable int userId, @PathVariable int cardId){
+        return cardDao.deleteCardFromUserCard(cardId, userId);
     }
 }

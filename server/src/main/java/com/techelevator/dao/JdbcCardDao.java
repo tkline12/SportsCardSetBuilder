@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Card;
 import com.techelevator.model.Player;
+import com.techelevator.model.UserCard;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -23,8 +24,7 @@ public class JdbcCardDao implements CardDao{
             List<Player> players = playerDao.getPlayersByCardId(cardId);
             String image = resultSet.getString("image");
             String setName = cardSetDao.getSetBySetId(setId).getSetName();
-            boolean isOwned = resultSet.getBoolean("is_owned");
-            Card card = new Card(cardId, cardName, cardNumber, players, image, setId, setName, isOwned);
+            Card card = new Card(cardId, cardName, cardNumber, players, image, setId, setName);
             return card;
         }
     };
@@ -113,8 +113,17 @@ public class JdbcCardDao implements CardDao{
                 "WHERE uc.user_id = ?", MAPPER, userId);
     }
 
-    public Card changeCardOwnership(Card card){
-        jdbcTemplate.update("UPDATE card SET is_owned = ? WHERE card_id = ?", card.isOwned(), card.getCardId());
+//    public UserCard changeCardOwnership(UserCard userCard){
+//        jdbcTemplate.update("UPDATE user_card SET is_owned = ? WHERE card_id = ? && user_id = ?", userCard.getCardId(), userCard.getUserId());
+//        return null;
+//    }
+
+    public UserCard addCardToUserCard(int cardId, int userId){
+        jdbcTemplate.update("INSERT INTO user_card (user_id, card_id) VALUES (?, ?)", userId, cardId);
+        return null;
+    }
+    public UserCard deleteCardFromUserCard(int cardId, int userId){
+        jdbcTemplate.update("DELETE FROM user_card WHERE user_id = ? AND card_id = ?", userId, cardId);
         return null;
     }
 }

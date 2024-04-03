@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Card;
+import com.techelevator.model.UserCard;
 
 import java.util.List;
 
@@ -17,5 +18,7 @@ public interface CardDao {
     List<Card> getCardsBySportId(int sportId);
     List<Card> getCardsBySportName(String sportName);
     List<Card> getCardsByUserId(int userId);
-    Card changeCardOwnership(Card card);
+//    UserCard changeCardOwnership(UserCard card);
+    UserCard addCardToUserCard(int cardId, int userId);
+    UserCard deleteCardFromUserCard(int cardId, int userId);
 }

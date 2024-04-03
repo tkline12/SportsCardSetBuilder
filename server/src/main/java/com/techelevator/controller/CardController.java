@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.CardDao;
 import com.techelevator.model.Card;
+import com.techelevator.model.UserCard;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,8 +37,8 @@ public class CardController {
         return cardDao.getCardsByPlayerId(playerId);
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    public Card changeCardOwnership(@RequestBody Card card){
-       return cardDao.changeCardOwnership(card);
-    }
+//    @RequestMapping(method = RequestMethod.PUT)
+//    public UserCard changeCardOwnership(@RequestBody UserCard userCard){
+//       return cardDao.changeCardOwnership(userCard);
+//    }
 }
