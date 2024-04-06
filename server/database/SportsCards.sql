@@ -4,7 +4,7 @@
 -- Modify this code to update the DB schema diagram.
 -- To reset the sample schema, replace everything with
 -- two dots ('..' - without quotes).
-DROP TABLE if exists app_user, card, player, player_card, set, sport, team, team_card, user_card, player_team, sport_player, sport_card CASCADE;
+DROP TABLE if exists app_user, card, player, player_card, set, sport, team, team_card, user_card, player_team, sport_player, subset, set_subset CASCADE;
 
 CREATE TABLE app_user (
 	user_id serial,
@@ -24,6 +24,7 @@ CREATE TABLE "card" (
     "card_number" varchar(20)   NOT NULL,
     "set_id" int   NOT NULL,
     "image" varchar(50) NOT NULL,
+    "subset_id" int,
     CONSTRAINT "pk_card" PRIMARY KEY (
         "card_id"
      )
@@ -90,8 +91,30 @@ CREATE TABLE "sport_player" (
     "player_id" int   NOT NULL
 );
 
+CREATE TABLE "subset" (
+    "subset_id" serial NOT NULL,
+    "subset_name" varchar(50)   NOT NULL,
+    CONSTRAINT "pk_subset" PRIMARY KEY (
+        "subset_id"
+        )
+);
+
+CREATE TABLE "set_subset" (
+    "set_id" int   NOT NULL,
+    "subset_id" int   NOT NULL
+);
+
 ALTER TABLE "card" ADD CONSTRAINT "fk_card_set_id" FOREIGN KEY("set_id")
 REFERENCES "set" ("set_id");
+
+ALTER TABLE "card" ADD CONSTRAINT "fk_card_subset_id" FOREIGN KEY("subset_id")
+REFERENCES "subset" ("subset_id");
+
+ALTER TABLE "set_subset" ADD CONSTRAINT "fk_set_subset_set_id" FOREIGN KEY("set_id")
+REFERENCES "set" ("set_id");
+
+ALTER TABLE "set_subset" ADD CONSTRAINT "fk_set_subset_subset_id" FOREIGN KEY("subset_id")
+REFERENCES "subset" ("subset_id");
 
 ALTER TABLE "user_card" ADD CONSTRAINT "fk_user_card_user_id" FOREIGN KEY("user_id")
 REFERENCES "app_user" ("user_id");
@@ -147,6 +170,9 @@ ON "set" ("set_name");
 CREATE INDEX "idx_set_brand"
 ON "set" ("brand");
 
+CREATE INDEX "idx_subset_name"
+ON "subset" ("subset_name");
+
 INSERT INTO app_user (username, password_hash, role, display_name, img_url, short_bio)
 	VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN', null, null, null);
 INSERT INTO app_user (username, password_hash, role, display_name, img_url, short_bio)
@@ -160,6 +186,7 @@ INSERT INTO app_user (username, password_hash, role, display_name, img_url, shor
 INSERT INTO app_user (username, password_hash, role, display_name, img_url, short_bio)
 	VALUES ('troublemaker','$2a$10$K/XxMq03OaJM4AhLU7YE3eQh1KAd8/gzWIOWLgBqVrb5AoSy.pmSK','ROLE_USER', null, null, null);
 
+--inserting players below
 
 INSERT INTO player (player_name) VALUES ('Tyreek Hill');
 INSERT INTO player (player_name) VALUES ('Paolo Banchero');
@@ -443,13 +470,15 @@ INSERT INTO player (player_name) VALUES ('Moritz Wagner');
 INSERT INTO player (player_name) VALUES ('Gary Trent Jr.');
 INSERT INTO player (player_name) VALUES ('Karl-Anthony Towns');
 
-
+--inserting sports below
 
 INSERT INTO sport (sport_name) VALUES ('Basketball');
 INSERT INTO sport (sport_name) VALUES ('Baseball');
 INSERT INTO sport (sport_name) VALUES ('Football');
 INSERT INTO sport (sport_name) VALUES ('Hockey');
 INSERT INTO sport (sport_name) VALUES ('Soccer');
+
+--inserting teams below
 
 INSERT INTO team (team_name, sport_id) SELECT 'Miami Dolphins', sport_id from sport WHERE sport_name = 'Football';
 INSERT INTO team (team_name, sport_id) SELECT 'Chicago White Sox', sport_id from sport WHERE sport_name = 'Baseball';
@@ -545,6 +574,8 @@ INSERT INTO team (team_name, sport_id) SELECT 'San Francisco Giants', sport_id f
 INSERT INTO team (team_name, sport_id) SELECT 'Colorado Rockies', sport_id from sport WHERE sport_name = 'Baseball';
 INSERT INTO team (team_name, sport_id) SELECT 'Philadelphia 76ers', sport_id from sport WHERE sport_name = 'Basketball';
 
+--inserting sets below
+
 INSERT INTO set (set_name, year, brand, set_image) VALUES ('Donruss', 2018, 'Panini', '2018_Donruss_Football.jpg');
 INSERT INTO set (set_name, year, brand, set_image) VALUES ('Prizm', 2021, 'Panini', '2021_Prizm_Basketball.jpg');
 INSERT INTO set (set_name, year, brand, set_image) VALUES ('Bowman Chrome', 2018,'Topps', '2018_Bowman_Chrome_Baseball.jpg');
@@ -555,6 +586,37 @@ INSERT INTO set (set_name, year, brand, set_image) VALUES ('National Treasures',
 INSERT INTO set (set_name, year, brand, set_image) VALUES ('Prestige', 2019,'Panini', '2019_Prestige_Football.jpg');
 INSERT INTO set (set_name, year, brand, set_image) VALUES ('Prizm', 2014,'Panini', '2014_Prizm_Basketball.jpg');
 INSERT INTO set (set_name, year, brand, set_image) VALUES ('Topps Chrome', 2019,'Topps', '2019_Topps_Chrome_Baseball.jpg');
+
+--inserting subsets below
+
+INSERT INTO subset (subset_name) VALUES ('Base');
+INSERT INTO subset (subset_name) VALUES ('Base Holo');
+INSERT INTO subset (subset_name) VALUES ('Base Blue Velocity');
+INSERT INTO subset (subset_name) VALUES ('Base Hyper Pink');
+INSERT INTO subset (subset_name) VALUES ('Base Checkerboard');
+INSERT INTO subset (subset_name) VALUES ('Base Shock');
+INSERT INTO subset (subset_name) VALUES ('Base Orange #/199');
+INSERT INTO subset (subset_name) VALUES ('Base Lime Green #/149');
+INSERT INTO subset (subset_name) VALUES ('Base Red #/99');
+INSERT INTO subset (subset_name) VALUES ('Base Pink Velocity #/79');
+INSERT INTO subset (subset_name) VALUES ('Base Blue #/49');
+INSERT INTO subset (subset_name) VALUES ('Base Black Velocity #/39');
+INSERT INTO subset (subset_name) VALUES ('Base Pink #/25');
+INSERT INTO subset (subset_name) VALUES ('Base Purple Stars #/13');
+INSERT INTO subset (subset_name) VALUES ('Base Gold #/10');
+INSERT INTO subset (subset_name) VALUES ('Base Green #/5');
+INSERT INTO subset (subset_name) VALUES ('Base Black 1/1');
+INSERT INTO subset (subset_name) VALUES ('Base Gold Vinyl 1/1');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Base');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Purple');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Holo');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Blue #/49');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Pink #/25');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Gold #/10');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Green #/5');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Gold Vinyl 1/1');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Black 1/1');
+INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Checkerboard 1/1');
 
 --inserting cards below
 
@@ -569,7 +631,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Luka Donci
 
 WITH c AS (
 	INSERT INTO card (card_name, card_number, image, set_id)
-	SELECT 'Base Rookie', '1', 'Ohtani_Bowman_Chrome_Rookie.jpg', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year = 2018
+	SELECT 'Base Rookie', '1', 'Ohtani_Bowman_Chrome_Rookie.jpg', set_id FROM set WHERE set_name = 'Bowman Chrome' AND year =2018
 	RETURNING card_id
 )
 INSERT INTO player_card (player_id, card_id)
