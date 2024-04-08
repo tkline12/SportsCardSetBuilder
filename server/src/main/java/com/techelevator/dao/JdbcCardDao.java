@@ -24,7 +24,8 @@ public class JdbcCardDao implements CardDao{
             List<Player> players = playerDao.getPlayersByCardId(cardId);
             String image = resultSet.getString("image");
             String setName = cardSetDao.getSetBySetId(setId).getSetName();
-            Card card = new Card(cardId, cardName, cardNumber, players, image, setId, setName);
+            int subsetId = resultSet.getInt("subset_id");
+            Card card = new Card(cardId, cardName, cardNumber, players, image, setId, setName, subsetId);
             return card;
         }
     };
