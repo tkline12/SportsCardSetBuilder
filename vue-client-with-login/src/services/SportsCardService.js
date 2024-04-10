@@ -22,6 +22,10 @@ export default {
     return axios.get('/cards')
   },
 
+  getSubsets(){
+    return axios.get(`/subsets`)
+  },
+
   getCardsByPlayerId(playerId){
     return axios.get(`/cards/players/${playerId}`)
   },
@@ -29,6 +33,11 @@ export default {
   getCardsBySetId(setId){
     return axios.get(`/cards/sets/${setId}`)
   },
+
+  getCardsBySubsetId(subsetId){
+    return axios.get(`/cards/sets/${subsetId}`)
+  }, 
+
   changeOwnedStatus(card){
     return axios.put('/cards', card)
   },

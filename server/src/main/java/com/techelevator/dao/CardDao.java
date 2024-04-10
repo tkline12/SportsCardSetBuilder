@@ -18,7 +18,9 @@ public interface CardDao {
     List<Card> getCardsBySportId(int sportId);
     List<Card> getCardsBySportName(String sportName);
     List<Card> getCardsByUserId(int userId);
+    List<Card> getCardsBySubsetId(int subsetId);
 //    UserCard changeCardOwnership(UserCard card);
     UserCard addCardToUserCard(int cardId, int userId);
     UserCard deleteCardFromUserCard(int cardId, int userId);
+
 }

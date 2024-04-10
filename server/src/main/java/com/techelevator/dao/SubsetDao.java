@@ -7,5 +7,6 @@ import java.util.List;
 public interface SubsetDao {
     List<Subset> getSubsets();
     Subset getSubsetById(int subsetId);
-    List<Subset>getSubsetByName(String subsetName);
+    List<Subset> getSubsetByName(String subsetName);
+//    List<Subset> getSubsetsBySetId(setId);
 }
