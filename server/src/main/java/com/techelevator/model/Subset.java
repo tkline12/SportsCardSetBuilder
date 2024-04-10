@@ -1,27 +1,28 @@
 package com.techelevator.model;
 
 public class Subset {
-    private int subset_id;
-    private String subset_name;
+    private int subsetId;
 
-    public Subset(int subset_id, String subset_name) {
-        this.subset_id = subset_id;
-        this.subset_name = subset_name;
+    private String subsetName;
+
+    public Subset(int subsetId, String subsetName) {
+        this.subsetId = subsetId;
+        this.subsetName = subsetName;
     }
 
-    public int getSubset_id() {
-        return subset_id;
+    public int getSubsetId() {
+        return subsetId;
     }
 
-    public void setSubset_id(int subset_id) {
-        this.subset_id = subset_id;
+    public void setSubsetId(int subset_id) {
+        this.subsetId = subset_id;
     }
 
-    public String getSubset_name() {
-        return subset_name;
+    public String getSubsetName() {
+        return subsetName;
     }
 
-    public void setSubset_name(String subset_name) {
-        this.subset_name = subset_name;
+    public void setSubsetName(String subsetName) {
+        this.subsetName = subsetName;
     }
 }

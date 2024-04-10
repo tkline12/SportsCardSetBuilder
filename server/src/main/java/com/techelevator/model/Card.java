@@ -5,7 +5,6 @@ import java.util.List;
 public class Card {
 
     private int cardId;
-    private String cardName;
     private String cardNumber;
     private List<Player> players;
     private String image;
@@ -14,16 +13,17 @@ public class Card {
     private boolean owned;
     private int subsetId;
 
+    private String subsetName;
 
-    public Card(int cardId, String cardName, String cardNumber, List<Player> players, String image, int setId, String setName, int subsetId){
+    public Card(int cardId, String cardNumber, List<Player> players, String image, int setId, String setName, int subsetId, String subsetName){
         this.cardId = cardId;
-        this.cardName = cardName;
         this.cardNumber = cardNumber;
         this.players = players;
         this.image = image;
         this.setId = setId;
         this.setName = setName;
         this.subsetId = subsetId;
+        this.subsetName = subsetName;
     }
 
     public int getCardId() {
@@ -32,14 +32,6 @@ public class Card {
 
     public void setCardId(int cardId) {
         this.cardId = cardId;
-    }
-
-    public String getCardName() {
-        return cardName;
-    }
-
-    public void setCardName(String cardName) {
-        this.cardName = cardName;
     }
 
     public String getCardNumber() {
@@ -93,5 +85,13 @@ public class Card {
 
     public void setSubsetId(int subsetId) {
         this.subsetId = subsetId;
+    }
+
+    public String getSubsetName() {
+        return subsetName;
+    }
+
+    public void setSubsetName(String subsetName) {
+        this.subsetName = subsetName;
     }
 }

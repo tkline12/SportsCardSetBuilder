@@ -33,9 +33,9 @@ export default {
 computed: {
     filteredCards(){
       return this.cards.filter(card => {
-        let cardName = card.cardName.toLowerCase();
+        let subsetName = card.subsetName.toLowerCase();
         let lowerCaseSearch = this.searchTerm.toLowerCase();
-        return cardName.includes(lowerCaseSearch);
+        return subsetName.includes(lowerCaseSearch);
       })
     }
   },

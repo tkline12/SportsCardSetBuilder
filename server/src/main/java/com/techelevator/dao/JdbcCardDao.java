@@ -18,25 +18,27 @@ public class JdbcCardDao implements CardDao{
         @Override
         public Card mapRow(ResultSet resultSet, int i) throws SQLException {
             int cardId = resultSet.getInt("card_id");
-            String cardName = resultSet.getString("card_name");
             String cardNumber = resultSet.getString("card_number");
             int setId = resultSet.getInt("set_id");
             List<Player> players = playerDao.getPlayersByCardId(cardId);
             String image = resultSet.getString("image");
             String setName = cardSetDao.getSetBySetId(setId).getSetName();
             int subsetId = resultSet.getInt("subset_id");
-            Card card = new Card(cardId, cardName, cardNumber, players, image, setId, setName, subsetId);
+            String subsetName = subsetDao.getSubsetById(subsetId).getSubsetName();
+            Card card = new Card(cardId, cardNumber, players, image, setId, setName, subsetId, subsetName);
             return card;
         }
     };
 
     private final PlayerDao playerDao;
     private final CardSetDao cardSetDao;
+    private final SubsetDao subsetDao;
 
-    public JdbcCardDao(DataSource dataSource, PlayerDao playerDao, CardSetDao cardSetDao) {
+    public JdbcCardDao(DataSource dataSource, PlayerDao playerDao, CardSetDao cardSetDao, SubsetDao subsetDao) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
         this.playerDao = playerDao;
         this.cardSetDao = cardSetDao;
+        this.subsetDao = subsetDao;
     }
 
     @Override
@@ -113,12 +115,11 @@ public class JdbcCardDao implements CardDao{
                 "JOIN user_card uc ON uc.card_id = c.card_id " +
                 "WHERE uc.user_id = ?", MAPPER, userId);
     }
-
-//    public UserCard changeCardOwnership(UserCard userCard){
-//        jdbcTemplate.update("UPDATE user_card SET is_owned = ? WHERE card_id = ? && user_id = ?", userCard.getCardId(), userCard.getUserId());
-//        return null;
-//    }
-
+    public List<Card> getCardsBySubsetName(String subsetName) {
+        return jdbcTemplate.query("SELECT * FROM card c " +
+                "JOIN subset s ON s.subset_id = c.subset_id " +
+                "WHERE subset_name ILIKE ?", MAPPER,"%" + subsetName + "%");
+    }
     public UserCard addCardToUserCard(int cardId, int userId){
         jdbcTemplate.update("INSERT INTO user_card (user_id, card_id) VALUES (?, ?)", userId, cardId);
         return null;

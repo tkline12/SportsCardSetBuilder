@@ -7,7 +7,7 @@
       <div class="player-name">
         <p v-for="player in card.players" :key="player.playerId">{{ player.playerName }}</p>
       </div>
-      <div class="card-name">{{ card.setName }} {{ card.cardName }}</div>
+      <div class="card-name">{{ card.setName }} {{ card.subsetName }}</div>
       <div class="card-number">#{{ card.cardNumber }}</div>
       <input type="checkbox" v-model="checked" @change="checkCard()"> Owned
     </div>
