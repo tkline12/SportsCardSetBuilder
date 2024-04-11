@@ -115,6 +115,12 @@ public class JdbcCardDao implements CardDao{
                 "JOIN user_card uc ON uc.card_id = c.card_id " +
                 "WHERE uc.user_id = ?", MAPPER, userId);
     }
+
+    @Override
+    public List<Card> getCardsBySubsetId(int subsetId) {
+        return null;
+    }
+
     public List<Card> getCardsBySubsetName(String subsetName) {
         return jdbcTemplate.query("SELECT * FROM card c " +
                 "JOIN subset s ON s.subset_id = c.subset_id " +
