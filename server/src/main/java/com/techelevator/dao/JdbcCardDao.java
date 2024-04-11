@@ -126,6 +126,13 @@ public class JdbcCardDao implements CardDao{
                 "JOIN subset s ON s.subset_id = c.subset_id " +
                 "WHERE subset_name ILIKE ?", MAPPER,"%" + subsetName + "%");
     }
+
+    public List<Card> getCardsBySubsetIdAndSetId(int subsetId, int setId){
+        return jdbcTemplate.query("SELECT * FROM card c " +
+                "JOIN set s ON  c.set_id = s.set_id " +
+                "JOIN subset ss ON c.subset_id = ss.subset_id " +
+                "WHERE s.set_id = ? AND ss.subset_id = ?", MAPPER, setId, subsetId);
+    }
     public UserCard addCardToUserCard(int cardId, int userId){
         jdbcTemplate.update("INSERT INTO user_card (user_id, card_id) VALUES (?, ?)", userId, cardId);
         return null;

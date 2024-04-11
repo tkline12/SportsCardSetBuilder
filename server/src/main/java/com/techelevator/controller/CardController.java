@@ -41,8 +41,9 @@ public class CardController {
     public List<Card> getCardsBySubsetId(@PathVariable int subsetId){
         return cardDao.getCardsBySubsetId(subsetId);
     }
-//    @RequestMapping(method = RequestMethod.PUT)
-//    public UserCard changeCardOwnership(@RequestBody UserCard userCard){
-//       return cardDao.changeCardOwnership(userCard);
-//    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "sets/{setId}/subsets/{subsetId}")
+    public List<Card> getCardsBySubsetIdAndSetId(@PathVariable int setId, @PathVariable int subsetId){
+        return cardDao.getCardsBySubsetIdAndSetId(subsetId, setId);
+    }
 }

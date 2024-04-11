@@ -615,6 +615,58 @@ INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Gold Vinyl 1/1
 INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Black 1/1');
 INSERT INTO subset (subset_name) VALUES ('Rated Rookie Signatures Checkerboard 1/1');
 
+--inserting into set_subset below
+
+--WITH ss AS (
+--    SELECT s.set_id, sb.subset_id
+--    FROM "set" s
+--    CROSS JOIN subset sb
+--    WHERE s.set_name = 'Optic' AND s.year = 2018
+--)
+--INSERT INTO set_subset (set_id, subset_id)
+--SELECT ss.set_id, ss.subset_id
+--FROM ss;
+--
+--WITH ss AS (
+--    SELECT s.set_id, sb.subset_id
+--    FROM "set" s
+--    CROSS JOIN subset sb
+--    WHERE s.set_name = 'Donruss' AND s.year = 2018
+--)
+--INSERT INTO set_subset (set_id, subset_id)
+--SELECT ss.set_id, ss.subset_id
+--FROM ss;
+--
+--WITH ss AS (
+--    SELECT s.set_id, sb.subset_id
+--    FROM "set" s
+--    CROSS JOIN subset sb
+--    WHERE s.set_name = 'Prizm' AND s.year = 2021
+--)
+--INSERT INTO set_subset (set_id, subset_id)
+--SELECT ss.set_id, ss.subset_id
+--FROM ss;
+--
+--WITH ss AS (
+--    SELECT s.set_id, sb.subset_id
+--    FROM "set" s
+--    CROSS JOIN subset sb
+--    WHERE s.set_name = 'Bowman Chrome' AND s.year = 2018
+--)
+--INSERT INTO set_subset (set_id, subset_id)
+--SELECT ss.set_id, ss.subset_id
+--FROM ss;
+--
+--WITH ss AS (
+--    SELECT s.set_id, sb.subset_id
+--    FROM "set" s
+--    CROSS JOIN subset sb
+--    WHERE s.set_name = 'Topps' AND s.year = 2020
+--)
+--INSERT INTO set_subset (set_id, subset_id)
+--SELECT ss.set_id, ss.subset_id
+--FROM ss;
+
 --inserting cards below
 
 WITH c AS (
