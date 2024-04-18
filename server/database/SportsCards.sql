@@ -183,8 +183,8 @@ INSERT INTO app_user (username, password_hash, role, display_name, img_url, shor
 INSERT INTO app_user (username, password_hash, role, display_name, img_url, short_bio)
 	VALUES ('troublemaker','$2a$10$K/XxMq03OaJM4AhLU7YE3eQh1KAd8/gzWIOWLgBqVrb5AoSy.pmSK','ROLE_USER', null, null, null);
 
---inserting players below
 
+--inserting players below
 INSERT INTO player (player_name) VALUES ('Tyreek Hill');
 INSERT INTO player (player_name) VALUES ('Paolo Banchero');
 INSERT INTO player (player_name) VALUES ('Jalen Suggs');
@@ -646,58 +646,8 @@ INSERT INTO set_subset (set_id, subset_id) VALUES (4, 26);
 INSERT INTO set_subset (set_id, subset_id) VALUES (4, 27);
 INSERT INTO set_subset (set_id, subset_id) VALUES (4, 28);
 
---WITH ss AS (
---    SELECT s.set_id, sb.subset_id
---    FROM "set" s
---    CROSS JOIN subset sb
---    WHERE s.set_name = 'Optic' AND s.year = 2018
---)
---INSERT INTO set_subset (set_id, subset_id)
---SELECT ss.set_id, ss.subset_id
---FROM ss;
---
---WITH ss AS (
---    SELECT s.set_id, sb.subset_id
---    FROM "set" s
---    CROSS JOIN subset sb
---    WHERE s.set_name = 'Donruss' AND s.year = 2018
---)
---INSERT INTO set_subset (set_id, subset_id)
---SELECT ss.set_id, ss.subset_id
---FROM ss;
---
---WITH ss AS (
---    SELECT s.set_id, sb.subset_id
---    FROM "set" s
---    CROSS JOIN subset sb
---    WHERE s.set_name = 'Prizm' AND s.year = 2021
---)
---INSERT INTO set_subset (set_id, subset_id)
---SELECT ss.set_id, ss.subset_id
---FROM ss;
---
---WITH ss AS (
---    SELECT s.set_id, sb.subset_id
---    FROM "set" s
---    CROSS JOIN subset sb
---    WHERE s.set_name = 'Bowman Chrome' AND s.year = 2018
---)
---INSERT INTO set_subset (set_id, subset_id)
---SELECT ss.set_id, ss.subset_id
---FROM ss;
---
---WITH ss AS (
---    SELECT s.set_id, sb.subset_id
---    FROM "set" s
---    CROSS JOIN subset sb
---    WHERE s.set_name = 'Topps' AND s.year = 2020
---)
---INSERT INTO set_subset (set_id, subset_id)
---SELECT ss.set_id, ss.subset_id
---FROM ss;
-
 --inserting cards below
-
+--inserting sample cards below
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
 	VALUES ('177', 'image.jpg', ( SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
@@ -2604,7 +2554,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Mikal Brid
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('1', 'damian_lillard_2018-optic_base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('1', 'damian_lillard_2018-optic_holo_base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
 	        (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
 	RETURNING card_id
 )
@@ -2613,7 +2563,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Damian Lil
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('2', 'steph-curry_2018-optic_base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('2', 'steph-curry_2018-optic_base_holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2622,7 +2572,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Stephen Cu
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('3', 'kyle-lowry-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('3', 'kyle-lowry-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2631,7 +2581,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Kyle Lowry
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('4', 'pat-bev-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('4', 'pat-bev-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2640,7 +2590,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Patrick Be
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('5', 'goran-dragic-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('5', 'goran-dragic-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2649,7 +2599,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Goran Drag
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('6', 'schroder-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('6', 'schroder-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2658,7 +2608,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Dennis Sch
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('7', 'elfrid-payton-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('7', 'elfrid-payton-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2667,7 +2617,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Elfrid Pay
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('8', 'kemba-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('8', 'kemba-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2676,7 +2626,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Kemba Walk
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('9', 'dj-augustin-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('9', 'dj-augustin-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2685,7 +2635,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'DJ Augusti
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('10', 'dennis-smith-jr-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('10', 'dennis-smith-jr-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2694,7 +2644,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Dennis Smi
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('11', 'cj-mccollum-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('11', 'cj-mccollum-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2703,7 +2653,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'CJ McCollu
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('12', 'klay-thompson-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('12', 'klay-thompson-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2712,7 +2662,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Klay Thomp
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('13', 'demar-derozan-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('13', 'demar-derozan-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2721,7 +2671,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'DeMar DeRo
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('14', 'lou-williams-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('14', 'lou-williams-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2730,7 +2680,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Lou Willia
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('15', 'dwyane-wade-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('15', 'dwyane-wade-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2739,7 +2689,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Dwyane Wad
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('16', 'jeremy-lin-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('16', 'jeremy-lin-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2748,7 +2698,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Jeremy Lin
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('17', 'jrue-holiday-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('17', 'jrue-holiday-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2757,7 +2707,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Jrue Holid
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('18', 'nic-batum-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('18', 'nic-batum-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2766,7 +2716,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nicolas Ba
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('19', 'evan-fournier-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('19', 'evan-fournier-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2775,7 +2725,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Evan Fourn
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('20', 'wesley-matthews-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('20', 'wesley-matthews-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2784,7 +2734,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Wesley Mat
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('21', 'evan-turner-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('21', 'evan-turner-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2793,7 +2743,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Evan Turne
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('22', 'kevin-durant-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('22', 'kevin-durant-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2802,7 +2752,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Kevin Dura
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('23', 'og-anunoby-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('23', 'og-anunoby-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2811,7 +2761,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'OG Anunoby
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('24', 'avery-bradley-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('24', 'avery-bradley-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2820,7 +2770,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Avery Brad
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('25', 'james-johnson-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('25', 'james-johnson-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2829,7 +2779,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'James John
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('26', 'taurean-prince-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('26', 'taurean-prince-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2838,7 +2788,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Taurean Pr
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('27', 'nikola-mirotic-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('27', 'nikola-mirotic-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2847,7 +2797,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nikola Mir
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('28', 'malik-monk-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('28', 'malik-monk-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2856,7 +2806,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Malik Monk
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('29', 'terrence-ross-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('29', 'terrence-ross-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2865,7 +2815,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Terrence R
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('30', 'harrison-barnes-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('30', 'harrison-barnes-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2874,7 +2824,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Harrison B
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('31', 'zach-collins-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('31', 'zach-collins-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2883,7 +2833,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Zach Colli
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('32', 'draymond-green-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('32', 'draymond-green-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2892,7 +2842,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Draymond G
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('33', 'serge-ibaka-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('33', 'serge-ibaka-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2901,7 +2851,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Serge Ibak
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('34', 'tobias-harris-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('34', 'tobias-harris-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2910,7 +2860,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Tobias Har
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('35', 'dion-waiters-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('35', 'dion-waiters-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2919,7 +2869,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Dion Waite
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('36', 'john-collins-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('36', 'john-collins-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2928,7 +2878,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'John Colli
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('37', 'julius-randle-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('37', 'julius-randle-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2937,7 +2887,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Julius Ran
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('38', 'mkg-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('38', 'mkg-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2946,7 +2896,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Michael Ki
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('39', 'aaron-gordon-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('39', 'aaron-gordon-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2955,7 +2905,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Aaron Gord
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('40', 'dirk-nowitzki-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('40', 'dirk-nowitzki-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2964,7 +2914,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Dirk Nowit
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('41', 'jusuf-nurkic-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('41', 'jusuf-nurkic-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2973,7 +2923,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Jusuf Nurk
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('42', 'demarcus-cousins-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('42', 'demarcus-cousins-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2982,7 +2932,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'DeMarcus C
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('43', 'jonas-valancuinas-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('43', 'jonas-valancuinas-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -2991,7 +2941,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Jonas Vala
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('44', 'marcin-gortat-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('44', 'marcin-gortat-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3027,7 +2977,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Anthony Da
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('48', 'tony-parker-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('48', 'tony-parker-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3045,7 +2995,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Nikola Vuc
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('50', 'deandre-jordan-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('50', 'deandre-jordan-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3054,7 +3004,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'DeAndre Jo
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('51', 'deaaron-fox-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('51', 'deaaron-fox-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3072,7 +3022,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Chris Paul
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('53', 'ricky-rubio-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('53', 'ricky-rubio-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3090,7 +3040,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Lonzo Ball
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('55', 'eric-bledsoe-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('55', 'eric-bledsoe-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3108,7 +3058,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Kyrie Irvi
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('57', 'frank-ntilikina-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('57', 'frank-ntilikina-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3162,7 +3112,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Clint Cape
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('63', 'donovan-mitchell-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('63', 'donovan-mitchell-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3180,7 +3130,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Brandon In
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('65', 'malcolm-brogdon-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('65', 'malcolm-brogdon-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
@@ -3198,7 +3148,7 @@ SELECT p.player_id, c.card_id FROM player p, c WHERE p.player_name = 'Jaylen Bro
 
 WITH c AS (
 	INSERT INTO card  (card_number, image, set_id, subset_id)
-	VALUES ('67', 'tim-hardaway-jr-2018-optic-base.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
+	VALUES ('67', 'tim-hardaway-jr-2018-optic-base-holo.jpg', (SELECT set_id FROM set WHERE set_name = 'Optic' AND year = 2018),
         (SELECT subset_id FROM subset WHERE subset_name = 'Base Holo'))
     RETURNING card_id
 )
